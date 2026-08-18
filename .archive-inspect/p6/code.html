@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Core Cart - Launch commerce faster</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#f0a0cc",
+                        "on-primary-fixed": "#3d0028",
+                        "on-secondary-fixed": "#1a1030",
+                        "on-primary-container": "#2e1a28",
+                        "surface-container-highest": "#ece2ec",
+                        "on-tertiary-container": "#00334d",
+                        "inverse-surface": "#2e1a28",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#40c0ee",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#7c52aa",
+                        "on-error-container": "#9b1c1c",
+                        "outline": "#907898",
+                        "on-primary-fixed-variant": "#a02070",
+                        "on-tertiary-fixed-variant": "#005580",
+                        "error": "#e53e3e",
+                        "on-background": "#2e1a28",
+                        "on-secondary-container": "#2e2040",
+                        "surface-bright": "#fef7ff",
+                        "on-secondary-fixed-variant": "#4a3068",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#e0d6e0",
+                        "secondary-fixed-dim": "#c8a8e8",
+                        "inverse-on-surface": "#fef7ff",
+                        "primary-fixed": "#ffd6ee",
+                        "tertiary-fixed": "#c8eaff",
+                        "surface-container": "#f8eef8",
+                        "surface-variant": "#f2e8f2",
+                        "error-container": "#ffe8e8",
+                        "background": "#fef7ff",
+                        "on-surface": "#2e1a28",
+                        "inverse-primary": "#f0a0cc",
+                        "primary": "#e040a0",
+                        "tertiary-fixed-dim": "#80d0f0",
+                        "surface-container-high": "#f2e8f2",
+                        "secondary-fixed": "#eedcff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fef7ff",
+                        "primary-container": "#f080c0",
+                        "on-surface-variant": "#604868",
+                        "surface-tint": "#e040a0",
+                        "outline-variant": "#dcc8e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#fbf2fb",
+                        "secondary-container": "#eedcff",
+                        "on-tertiary-fixed": "#001a33",
+                        "tertiary": "#0096cc"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["DM Sans", "sans-serif"],
+                        "display": ["DM Sans", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"],
+                        "label": ["DM Sans", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'candy-primary': '0 4px 16px rgba(224, 64, 160, 0.2)',
+                        'candy-secondary': '0 4px 16px rgba(124, 82, 170, 0.2)',
+                        'candy-tertiary': '0 4px 16px rgba(0, 150, 204, 0.2)',
+                        'candy-card': '0 8px 32px rgba(224, 64, 160, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .hover-bounce:hover { transform: scale(1.03); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-24">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-md shadow-[0_4px_16px_rgba(224,64,160,0.15)] bg-background dark:bg-background transition-all duration-300 ease-out active:scale-95">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="text-2xl font-black tracking-tighter text-primary dark:text-primary-fixed-dim" href="#">Core Cart</a>
+<div class="hidden md:flex items-center gap-8 font-body font-medium tracking-tight">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary hover:scale-105 transition-transform duration-200 ease-out hover:text-primary" href="#product">Product</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary hover:scale-105 transition-transform duration-200 ease-out hover:text-primary" href="#features">Features</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary hover:scale-105 transition-transform duration-200 ease-out hover:text-primary" href="#tech">Tech</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary hover:scale-105 transition-transform duration-200 ease-out hover:text-primary" href="#docs">Docs</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold shadow-candy-primary hover-bounce transition-all">Get Started</button>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative max-w-7xl mx-auto px-6 py-20 lg:py-32 flex flex-col items-center text-center overflow-hidden">
+<div class="absolute inset-0 bg-primary-fixed-dim/20 rounded-full blur-3xl -z-10 w-96 h-96 top-0 left-1/2 -translate-x-1/2"></div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">🚀 Now in Beta</span>
+<h1 class="text-5xl md:text-7xl font-black text-primary mb-6 leading-tight max-w-4xl tracking-tighter">Core Cart — Launch commerce faster. Own the experience.</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant mb-10 max-w-3xl font-medium leading-relaxed">
+                A modular, TypeScript headless commerce core with storefront, merchant dashboard and admin tools — deployable via Docker, Render or Vercel.
+            </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg shadow-candy-primary hover-bounce flex items-center gap-2">
+                    Request a live demo
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- What It Is & Value Prop Bento -->
+<section class="max-w-7xl mx-auto px-6 py-16" id="product">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- What It Is Card -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-10 shadow-candy-card hover-bounce flex flex-col justify-center border-4 border-surface-container">
+<h2 class="text-3xl font-bold text-secondary mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">info</span>
+                        What It Is
+                    </h2>
+<p class="text-lg text-on-surface font-medium leading-relaxed">
+                        Core Cart is an all-in-one headless commerce engine designed to give developers absolute control without starting from scratch. It provides a robust backend, intuitive dashboards, and a lightning-fast storefront out of the box, ready to be customized and scaled to fit any business model.
+                    </p>
+</div>
+<!-- Quick Value Prop Card -->
+<div class="bg-primary-container rounded-xl p-8 shadow-candy-primary hover-bounce text-on-primary-container flex flex-col justify-center">
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                        Quick Value Prop
+                    </h3>
+<ul class="space-y-4 font-bold text-lg">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Ship commerce faster
+                        </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Keep control
+                        </li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Scale business models
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Key Capabilities -->
+<section class="max-w-7xl mx-auto px-6 py-16" id="features">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-black text-primary mb-4">Key Capabilities</h2>
+<p class="text-xl text-on-surface-variant font-medium">Everything you need to run modern commerce.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Cap 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-candy-card hover-bounce flex flex-col items-center text-center">
+<div class="bg-secondary-container w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-candy-secondary">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Catalog</h3>
+</div>
+<!-- Cap 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-candy-card hover-bounce flex flex-col items-center text-center">
+<div class="bg-primary-fixed w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-candy-primary">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Cart</h3>
+</div>
+<!-- Cap 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-candy-card hover-bounce flex flex-col items-center text-center">
+<div class="bg-tertiary-fixed w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-candy-tertiary">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Orders</h3>
+</div>
+<!-- Cap 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-candy-card hover-bounce flex flex-col items-center text-center">
+<div class="bg-secondary-container w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-candy-secondary">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Notifications</h3>
+</div>
+<!-- Cap 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-candy-card hover-bounce flex flex-col items-center text-center">
+<div class="bg-primary-fixed w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-candy-primary">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Analytics</h3>
+</div>
+<!-- Cap 6 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-candy-card hover-bounce flex flex-col items-center text-center">
+<div class="bg-tertiary-fixed w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-candy-tertiary">
+<span class="material-symbols-outlined text-tertiary text-3xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Extensible AI</h3>
+</div>
+</div>
+</section>
+<!-- Tech & GTM -->
+<section class="max-w-7xl mx-auto px-6 py-16" id="tech">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Tech Stack -->
+<div class="bg-inverse-surface rounded-xl p-10 shadow-candy-card hover-bounce text-inverse-on-surface">
+<h2 class="text-3xl font-bold text-primary-fixed-dim mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">code</span>
+                        Technical Foundation
+                    </h2>
+<div class="flex flex-wrap gap-4">
+<span class="bg-secondary-fixed/20 text-secondary-fixed-dim px-6 py-3 rounded-full font-bold text-lg border border-secondary-fixed/30">TypeScript</span>
+<span class="bg-secondary-fixed/20 text-secondary-fixed-dim px-6 py-3 rounded-full font-bold text-lg border border-secondary-fixed/30">Next.js</span>
+<span class="bg-secondary-fixed/20 text-secondary-fixed-dim px-6 py-3 rounded-full font-bold text-lg border border-secondary-fixed/30">Prisma</span>
+<span class="bg-secondary-fixed/20 text-secondary-fixed-dim px-6 py-3 rounded-full font-bold text-lg border border-secondary-fixed/30">Docker</span>
+</div>
+</div>
+<!-- GTM & Investment -->
+<div class="flex flex-col gap-8">
+<div class="bg-tertiary-container rounded-xl p-8 shadow-candy-tertiary hover-bounce text-on-tertiary-container flex-1">
+<h3 class="text-2xl font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">target</span>
+                            Commercial &amp; GTM
+                        </h3>
+<p class="text-lg font-medium">Targeting mid-market D2C and agencies.</p>
+</div>
+<div class="bg-secondary-container rounded-xl p-8 shadow-candy-secondary hover-bounce text-on-secondary-container flex-1">
+<h3 class="text-2xl font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+                            Investment Ask
+                        </h3>
+<p class="text-lg font-medium">Seed/Pre-A round focus.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container w-full rounded-t-lg bg-surface-container-low dark:bg-surface-container-low transition-opacity duration-200 hover:opacity-80">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 gap-6 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-secondary dark:text-secondary-fixed-dim">Core Cart</span>
+<span class="text-sm font-body text-primary dark:text-primary-fixed-dim font-body text-sm">© 2024 Core Cart. Built with Joy.</span>
+</div>
+<div class="flex gap-6 font-body text-sm">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Github</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

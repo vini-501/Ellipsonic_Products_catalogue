@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SecureGate - Product Brochure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c3c5d9",
+                        "secondary-fixed-dim": "#c1c6d9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#dfe3ff",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-surface": "#191c1e",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dde1ff",
+                        "primary-container": "#0052ff",
+                        "secondary": "#585e6f",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "tertiary-container": "#57677e",
+                        "secondary-container": "#dadff3",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "primary": "#003ec7",
+                        "on-secondary-container": "#5d6273",
+                        "tertiary": "#3f4f65",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "secondary-fixed": "#dde2f6",
+                        "outline": "#737688",
+                        "on-surface-variant": "#434656",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-fixed": "#d3e4fe",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#004ced",
+                        "on-tertiary-container": "#d6e6ff",
+                        "on-primary-fixed": "#001452",
+                        "on-secondary-fixed-variant": "#414756",
+                        "on-secondary-fixed": "#151b29",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b7c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "lg": "32px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "md": "24px",
+                        "container-max": "1200px",
+                        "sm": "16px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "button-text": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "button-text": ["15px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .bento-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 0.75rem;
+            padding: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant dark:border-outline shadow-sm full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-sm md:px-lg py-base max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">SecureGate</span>
+</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors cursor-pointer active:opacity-80" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors cursor-pointer active:opacity-80" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors cursor-pointer active:opacity-80" href="#">Technical</a>
+</nav>
+<button class="bg-primary text-on-primary font-button-text text-button-text px-4 py-2 rounded-DEFAULT hover:bg-primary/90 transition-colors hidden md:block">
+                Request Demo
+            </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-sm md:px-lg py-12 space-y-24">
+<!-- Hero Section -->
+<section class="text-center space-y-6 max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 text-primary font-label-caps text-label-caps mb-4">
+<span class="material-symbols-outlined text-sm">verified</span>
+                ENTERPRISE READY
+            </div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                Modern, mobile-first access control for apartment communities
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Mobile resident authentication, temporary visitor passes, and a manager dashboard—deployable on-premises or in the cloud to reduce gate friction and improve security visibility.
+            </p>
+<p class="font-body-lg text-body-lg font-semibold text-primary mt-4">
+                SecureGate replaces manual gate checks with a digital resident app and admin portal that speeds visitor access, lowers staffing cost, and provides auditable access logs.
+            </p>
+<div class="pt-6 flex justify-center gap-4">
+<button class="bg-primary text-on-primary font-button-text text-button-text px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-md">
+                    Schedule a Demo
+                </button>
+<button class="bg-surface-container text-on-surface font-button-text text-button-text px-6 py-3 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors">
+                    Technical Specs
+                </button>
+</div>
+</section>
+<!-- Problem & Solution Split -->
+<section class="grid md:grid-cols-2 gap-8">
+<div class="bento-card bg-error-container/10 border-error/20">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">The Problem</h2>
+</div>
+<ul class="space-y-4 font-body-lg text-body-lg text-on-surface-variant">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-error mt-1">close</span>
+<span>Property managers still rely on phone calls and paper passes to grant entry.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-error mt-1">close</span>
+<span>This causes delays, increases staffing costs, and leaves poor records for audits and incidents.</span>
+</li>
+</ul>
+</div>
+<div class="bento-card bg-primary-container/5 border-primary/20">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">The Solution</h2>
+</div>
+<ul class="space-y-4 font-body-lg text-body-lg text-on-surface-variant">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary mt-1">smartphone</span>
+<span>Resident mobile app for secure sign-in and temporary guest passes.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary mt-1">dashboard</span>
+<span>Manager web portal for centralized control, user management, and access visibility.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary mt-1">dns</span>
+<span>Shared auth and UI libraries with containerized deployment for rapid enterprise pilots and on-prem installs.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Features Grid -->
+<section>
+<div class="text-center mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Core Features</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Everything you need to secure your community.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="bento-card flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Mobile Resident Sign-In</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Native React Native UX for fast tenant adoption.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bento-card flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Temporary Visitor Passes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Issue time-bound passes (QR/code) for quick gate clearance.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bento-card flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Manager Dashboard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time oversight, user management, and event review.</p>
+</div>
+<!-- Feature 4 -->
+<div class="bento-card flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">key</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Shared Auth Library</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consistent token-based auth across apps for simplified integration.</p>
+</div>
+<!-- Feature 5 -->
+<div class="bento-card flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">design_services</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">UI Kit &amp; Monorepo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consistent UX, faster feature shipping for customers.</p>
+</div>
+<!-- Feature 6 -->
+<div class="bento-card flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Containerized Deployments</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Docker + docker-compose for on-prem or cloud hosting.</p>
+</div>
+</div>
+</section>
+<!-- Business Benefits & Target -->
+<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant">
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+                        Business Benefits
+                    </h2>
+<ul class="space-y-4">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">savings</span>
+<div>
+<strong class="text-on-surface block">Reduce operational cost</strong>
+<span class="text-on-surface-variant text-body-sm">Fewer gate calls and lower guard hours.</span>
+</div>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">speed</span>
+<div>
+<strong class="text-on-surface block">Improve throughput</strong>
+<span class="text-on-surface-variant text-body-sm">Faster visitor entry and fewer queue delays.</span>
+</div>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">policy</span>
+<div>
+<strong class="text-on-surface block">Increase accountability</strong>
+<span class="text-on-surface-variant text-body-sm">Centralized logs and manager controls for incident review.</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">target</span>
+                        Target Customers
+                    </h2>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-surface rounded-full border border-outline-variant text-body-sm font-semibold text-on-surface-variant">Property management firms</span>
+<span class="px-4 py-2 bg-surface rounded-full border border-outline-variant text-body-sm font-semibold text-on-surface-variant">Multi-site apartment operators</span>
+<span class="px-4 py-2 bg-surface rounded-full border border-outline-variant text-body-sm font-semibold text-on-surface-variant">Gated communities</span>
+<span class="px-4 py-2 bg-surface rounded-full border border-outline-variant text-body-sm font-semibold text-on-surface-variant">Condominium boards</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Snapshot -->
+<section>
+<div class="bento-card border-l-4 border-l-primary">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">code</span>
+                        Technical Snapshot
+                    </h2>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-label-caps font-label-caps text-on-surface-variant">FOR IT TEAMS</span>
+</div>
+<div class="grid md:grid-cols-2 gap-6 font-body-sm text-body-sm text-on-surface-variant">
+<div>
+<strong class="text-on-surface block mb-1">Frontend Stack</strong>
+<p>React Native (mobile) + TypeScript Vite web portal</p>
+</div>
+<div>
+<strong class="text-on-surface block mb-1">Shared Architecture</strong>
+<p>pnpm monorepo: shared-auth, ui-kit, shared-types</p>
+</div>
+<div>
+<strong class="text-on-surface block mb-1">Deployment</strong>
+<p>Dockerfile + docker-compose, .env configuration</p>
+</div>
+<div>
+<strong class="text-on-surface block mb-1">Authentication</strong>
+<p>Token-based client libraries (tokenStorage/AuthContext)</p>
+</div>
+</div>
+<div class="mt-6 p-4 bg-surface-container rounded-lg">
+<strong class="text-on-surface text-body-sm block mb-1">Enterprise Readiness</strong>
+<p class="text-body-sm text-on-surface-variant">Pilot-ready frontends and deployment artifacts; backend/service details are documented and require final wiring for hardware integrations, SSO/MFA and audit retention.</p>
+</div>
+</div>
+</section>
+<!-- Pilot Offer & CTA -->
+<section class="bg-primary text-on-primary rounded-xl p-8 md:p-12 text-center relative overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 bg-black/10 rounded-full blur-xl"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-6">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Start Your Pilot Today</h2>
+<div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 inline-block text-left mb-6">
+<h3 class="font-headline-md text-headline-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">rocket_launch</span>
+                        4-Week Pilot Program
+                    </h3>
+<ul class="space-y-2 font-body-lg text-body-lg text-on-primary/90">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> On-site or cloud deployment for a single property</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Configuration of manager portal</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Tenant app pilot rollout</li>
+</ul>
+</div>
+<p class="font-body-lg text-body-lg text-on-primary/90 italic">
+                    “See SecureGate in action: 15-minute demo + 30-minute pilot scoping.”
+                </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+<button class="bg-surface text-primary font-button-text text-button-text px-8 py-4 rounded-lg hover:bg-surface-variant transition-colors shadow-lg w-full sm:w-auto">
+                        Book Demo
+                    </button>
+<a class="text-on-primary font-body-lg hover:underline w-full sm:w-auto" href="mailto:your-sales@company.com">
+                        your-sales@company.com
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-sm py-md gap-gutter max-w-container-max mx-auto full-width mt-12">
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">security</span>
+            SecureGate
+        </div>
+<nav class="flex flex-wrap justify-center gap-4">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Security Whitepaper</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Contact Support</a>
+</nav>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+            © 2024 SecureGate Access Control. All rights reserved.
+        </div>
+</footer>
+</body></html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Option-Algo | Centralize Your Option Trading Workflows</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00f2ff",
+                        "surface-bright": "#39393b",
+                        "border-muted": "#27272a",
+                        "surface-variant": "#353437",
+                        "surface-dim": "#131315",
+                        "inverse-surface": "#e5e1e4",
+                        "pink-laser": "#ff00d9",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#849495",
+                        "bg-deep": "#09090b",
+                        "secondary-container": "#ff2dd9",
+                        "surface-container-low": "#1c1b1d",
+                        "on-primary-fixed": "#002022",
+                        "on-tertiary-container": "#516800",
+                        "cyan-glow": "#00f2ff",
+                        "surface-container": "#201f22",
+                        "on-secondary-fixed": "#3a0030",
+                        "on-tertiary-fixed": "#161e00",
+                        "tertiary-fixed-dim": "#abd600",
+                        "tertiary-fixed": "#c3f400",
+                        "on-surface-variant": "#b9cacb",
+                        "secondary": "#ffade3",
+                        "surface": "#131315",
+                        "surface-container-lowest": "#0e0e10",
+                        "background": "#131315",
+                        "on-error": "#690005",
+                        "tertiary-container": "#bdec00",
+                        "on-tertiary": "#283500",
+                        "secondary-fixed-dim": "#ffade3",
+                        "inverse-on-surface": "#313032",
+                        "on-primary-container": "#006a71",
+                        "secondary-fixed": "#ffd8ee",
+                        "lime-toxic": "#ccff00",
+                        "inverse-primary": "#00696f",
+                        "on-secondary-fixed-variant": "#860071",
+                        "text-dim": "#a1a1aa",
+                        "surface-zinc": "#141417",
+                        "tertiary": "#efffbb",
+                        "on-tertiary-fixed-variant": "#3c4d00",
+                        "text-high": "#ffffff",
+                        "on-surface": "#e5e1e4",
+                        "outline-variant": "#3a494b",
+                        "on-secondary": "#5f004f",
+                        "error-container": "#93000a",
+                        "on-primary": "#00363a",
+                        "primary-fixed-dim": "#00dbe7",
+                        "primary": "#e1fdff",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353437",
+                        "surface-container-high": "#2a2a2c",
+                        "on-background": "#e5e1e4",
+                        "surface-tint": "#00dbe7",
+                        "on-primary-fixed-variant": "#004f54",
+                        "primary-fixed": "#74f5ff",
+                        "on-secondary-container": "#530045"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "label-sm": ["Geist"],
+                        "mono-data": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-lg": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+                        "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "mono-data": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neon-glow-primary { box-shadow: 0 0 12px rgba(0, 242, 255, 0.4); }
+        .neon-glow-secondary { box-shadow: 0 0 12px rgba(255, 0, 217, 0.4); }
+        .neon-text-primary { text-shadow: 0 0 8px rgba(0, 242, 255, 0.6); }
+        .neon-text-secondary { text-shadow: 0 0 8px rgba(255, 0, 217, 0.6); }
+        .glass-panel { background: rgba(20, 20, 23, 0.8); backdrop-filter: blur(12px); border: 1px solid #27272a; }
+        .terminal-grid { background-size: 32px 32px; background-image: linear-gradient(to right, rgba(39, 39, 42, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(39, 39, 42, 0.3) 1px, transparent 1px); }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-bg-deep text-on-surface font-body-md min-h-screen flex flex-col terminal-grid">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-background text-primary dark:text-primary font-body text-label-md tracking-tight text-xl font-headline font-bold tracking-tighter text-on-surface dark:text-on-surface docked full-width top-0 border-b border-outline-variant dark:border-outline-variant flat no shadows flex justify-between items-center w-full px-6 py-3 max-w-full mx-auto z-50 sticky">
+<div class="flex items-center gap-gutter">
+<span class="text-xl font-headline-md text-on-surface tracking-tighter neon-text-primary">Option-Algo</span>
+<div class="hidden md:flex items-center gap-6 ml-8">
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg transition-colors duration-200" href="#">Documentation</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg transition-colors duration-200" href="#">API Reference</a>
+<a class="text-primary dark:text-primary font-bold border-b-2 border-primary pb-1 font-label-lg" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg transition-colors duration-200" href="#">Changelog</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface font-label-lg transition-colors duration-200 hidden md:block">Sign In</button>
+<button class="bg-primary-container text-on-primary-fixed font-label-lg px-4 py-2 rounded-DEFAULT hover:neon-glow-primary transition-all">Get Started</button>
+</div>
+</nav>
+<main class="flex-grow flex flex-col items-center w-full pb-24">
+<!-- Hero Section -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-24 md:py-32 flex flex-col items-center justify-center text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-container/10 via-bg-deep/0 to-bg-deep/0 pointer-events-none"></div>
+<div class="z-10 max-w-4xl flex flex-col items-center gap-6">
+<div class="px-3 py-1 border border-primary-container/30 bg-primary-container/10 rounded-full flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00f2ff]"></span>
+<span class="font-mono-data text-primary-container uppercase text-[10px] tracking-widest">System Online // Core Systems Nominal</span>
+</div>
+<h1 class="font-headline-lg md:text-[56px] md:leading-[64px] text-text-high tracking-tighter max-w-3xl">
+                    From idea to execution — <span class="text-primary-container neon-text-primary">centralize your option trading workflows</span>
+</h1>
+<p class="font-body-lg text-text-dim max-w-2xl mt-4">
+                    A developer‑first backend to record, analyze and operationalize algorithmic options trades with secure API access. Built for precision. Engineered for speed.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+<button class="bg-primary-container text-on-primary-fixed font-label-lg px-8 py-3 rounded-DEFAULT hover:neon-glow-primary transition-all w-full sm:w-auto uppercase tracking-wider flex items-center justify-center gap-2">
+                        Schedule Demo <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="border border-pink-laser text-pink-laser bg-pink-laser/5 font-label-lg px-8 py-3 rounded-DEFAULT hover:neon-glow-secondary hover:bg-pink-laser/10 transition-all w-full sm:w-auto uppercase tracking-wider">
+                        Explore API Docs
+                    </button>
+</div>
+</div>
+</section>
+<!-- Business Outcomes Bento Grid -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-16 flex flex-col gap-8">
+<div class="flex items-center gap-3 border-b border-border-muted pb-4">
+<span class="material-symbols-outlined text-primary-container">insights</span>
+<h2 class="font-headline-sm text-text-high uppercase tracking-wider">Top 3 Business Outcomes</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel rounded-lg p-6 flex flex-col gap-4 relative overflow-hidden group hover:border-primary-container/50 transition-colors">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 blur-[50px] group-hover:bg-primary-container/10 transition-colors"></div>
+<div class="w-10 h-10 rounded border border-primary-container/30 bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">shield_lock</span>
+</div>
+<h3 class="font-headline-sm text-text-high mt-2">Reduce Operational Risk</h3>
+<p class="font-body-md text-text-dim">Eliminate manual data entry and fragmented spreadsheets. Centralize execution logs with immutable audit trails.</p>
+<div class="mt-auto pt-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-lime-toxic"></span>
+<span class="font-mono-data text-lime-toxic text-[11px] uppercase tracking-wider">Risk Metric: -84% Error Rate</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-lg p-6 flex flex-col gap-4 relative overflow-hidden group hover:border-pink-laser/50 transition-colors">
+<div class="absolute top-0 right-0 w-32 h-32 bg-pink-laser/5 blur-[50px] group-hover:bg-pink-laser/10 transition-colors"></div>
+<div class="w-10 h-10 rounded border border-pink-laser/30 bg-pink-laser/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-pink-laser">rocket_launch</span>
+</div>
+<h3 class="font-headline-sm text-text-high mt-2">Accelerate Iteration</h3>
+<p class="font-body-md text-text-dim">Deploy new strategies faster with our developer-first API. Backtest, paper trade, and move to production seamlessly.</p>
+<div class="mt-auto pt-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-mono-data text-primary-container text-[11px] uppercase tracking-wider">Speed Metric: 10x Deployment Velocity</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-lg p-6 flex flex-col gap-4 relative overflow-hidden group hover:border-lime-toxic/50 transition-colors">
+<div class="absolute top-0 right-0 w-32 h-32 bg-lime-toxic/5 blur-[50px] group-hover:bg-lime-toxic/10 transition-colors"></div>
+<div class="w-10 h-10 rounded border border-lime-toxic/30 bg-lime-toxic/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-lime-toxic">memory</span>
+</div>
+<h3 class="font-headline-sm text-text-high mt-2">Enable Automation</h3>
+<p class="font-body-md text-text-dim">Connect your trading logic directly to execution engines via WebSockets and REST APIs for zero-touch trading.</p>
+<div class="mt-auto pt-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-lime-toxic"></span>
+<span class="font-mono-data text-lime-toxic text-[11px] uppercase tracking-wider">Status: 100% Automated Workflow</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Snapshot & Capabilities -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 lg:grid-cols-2 gap-margin-desktop">
+<!-- Capabilities List -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 border-b border-border-muted pb-4">
+<span class="material-symbols-outlined text-primary-container">data_object</span>
+<h2 class="font-headline-sm text-text-high uppercase tracking-wider">Key Capabilities</h2>
+</div>
+<div class="flex flex-col gap-3">
+<div class="glass-panel rounded border-l-2 border-l-primary-container p-4 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container mt-0.5">api</span>
+<div>
+<h4 class="font-headline-sm text-text-high text-sm mb-1">Authenticated API</h4>
+<p class="font-body-md text-text-dim text-xs">Secure REST &amp; WebSocket endpoints with low-latency execution.</p>
+</div>
+</div>
+<div class="glass-panel rounded border-l-2 border-l-border-muted hover:border-l-primary-container transition-colors p-4 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">account_tree</span>
+<div>
+<h4 class="font-headline-sm text-text-high text-sm mb-1">Strategy Catalog</h4>
+<p class="font-body-md text-text-dim text-xs">Manage and version complex multi-leg option strategies centrally.</p>
+</div>
+</div>
+<div class="glass-panel rounded border-l-2 border-l-border-muted hover:border-l-primary-container transition-colors p-4 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">monitoring</span>
+<div>
+<h4 class="font-headline-sm text-text-high text-sm mb-1">Trade Analytics</h4>
+<p class="font-body-md text-text-dim text-xs">Real-time Greeks, PnL tracking, and historical performance metrics.</p>
+</div>
+</div>
+<div class="glass-panel rounded border-l-2 border-l-border-muted hover:border-l-primary-container transition-colors p-4 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">lock</span>
+<div>
+<h4 class="font-headline-sm text-text-high text-sm mb-1">Secure Sessions</h4>
+<p class="font-body-md text-text-dim text-xs">Enterprise-grade JWT authentication and role-based access control.</p>
+</div>
+</div>
+<div class="glass-panel rounded border-l-2 border-l-border-muted hover:border-l-primary-container transition-colors p-4 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">hub</span>
+<div>
+<h4 class="font-headline-sm text-text-high text-sm mb-1">Integration Scaffold</h4>
+<p class="font-body-md text-text-dim text-xs">Pre-built connectors for major brokerages and market data providers.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Snapshot -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 border-b border-border-muted pb-4">
+<span class="material-symbols-outlined text-primary-container">terminal</span>
+<h2 class="font-headline-sm text-text-high uppercase tracking-wider">Product Snapshot — Technical</h2>
+</div>
+<div class="glass-panel rounded-lg p-0 overflow-hidden flex flex-col h-full bg-surface-zinc">
+<div class="bg-surface-container-high border-b border-border-muted px-4 py-2 flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-border-muted"></div>
+<div class="w-3 h-3 rounded-full bg-border-muted"></div>
+<div class="w-3 h-3 rounded-full bg-border-muted"></div>
+<span class="font-mono-data text-text-dim text-xs ml-4">stack.config.json</span>
+</div>
+<div class="p-6 font-mono-data text-[13px] leading-relaxed text-on-surface-variant flex-grow flex flex-col justify-center">
+<span class="text-pink-laser">{</span>
+<div class="ml-4">
+<span class="text-primary-container">"runtime"</span>: <span class="text-lime-toxic">"Node.js v20.x"</span>,<br/>
+<span class="text-primary-container">"database"</span>: <span class="text-lime-toxic">"MongoDB Enterprise"</span>,<br/>
+<span class="text-primary-container">"auth"</span>: <span class="text-lime-toxic">"JWT / OAuth2"</span>,<br/>
+<span class="text-primary-container">"api_protocol"</span>: <span class="text-lime-toxic">"REST &amp; WebSocket"</span>,<br/>
+<span class="text-primary-container">"infrastructure"</span>: <span class="text-lime-toxic">"Docker / K8s Ready"</span>,<br/>
+<span class="text-primary-container">"latency_target"</span>: <span class="text-lime-toxic">"&lt; 5ms internal"</span>,<br/>
+<span class="text-primary-container">"availability"</span>: <span class="text-lime-toxic">"99.99%"</span>
+</div>
+<span class="text-pink-laser">}</span>
+<div class="mt-6 border-t border-border-muted pt-4 border-dashed">
+<span class="text-text-dim">// Connect instantly via terminal</span><br/>
+<span class="text-primary-container">$</span> <span class="text-text-high">npm install @optionalgo/sdk</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Immediate Value Callout -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-8">
+<div class="w-full border border-primary-container bg-primary-container/5 rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden neon-glow-primary">
+<div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary-container/20 to-transparent pointer-events-none"></div>
+<div class="flex items-center gap-4 z-10">
+<div class="w-12 h-12 rounded-full border border-primary-container bg-primary-container/20 flex items-center justify-center flex-shrink-0 animate-pulse">
+<span class="material-symbols-outlined text-primary-container">bolt</span>
+</div>
+<div>
+<h3 class="font-headline-md text-text-high uppercase tracking-wider m-0">Launch a pilot in <span class="text-primary-container neon-text-primary">2–4 weeks</span></h3>
+<p class="font-body-md text-text-dim mt-1">Accelerated onboarding for institutional partners.</p>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-fixed font-label-lg px-6 py-2 rounded-DEFAULT hover:bg-primary-fixed transition-all z-10 whitespace-nowrap uppercase tracking-wider">
+                    Initiate Pilot
+                </button>
+</div>
+</section>
+<!-- Commercial Model -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-16 flex flex-col gap-8">
+<div class="flex items-center gap-3 border-b border-border-muted pb-4 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary-container">account_balance_wallet</span>
+<h2 class="font-headline-sm text-text-high uppercase tracking-wider">Commercial Model</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Sandbox -->
+<div class="glass-panel rounded-lg p-6 flex flex-col border-border-muted">
+<div class="uppercase font-label-sm text-text-dim tracking-widest mb-2">Development</div>
+<h3 class="font-headline-md text-text-high mb-4">Sandbox</h3>
+<div class="text-2xl font-mono-data text-text-high mb-6">$0<span class="text-sm text-text-dim font-body-md">/mo</span></div>
+<ul class="font-body-md text-text-dim flex flex-col gap-3 flex-grow mb-8">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-lime-toxic text-[18px]">check</span> Paper trading environment</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-lime-toxic text-[18px]">check</span> Full API access (rate limited)</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-lime-toxic text-[18px]">check</span> Community support</li>
+</ul>
+<button class="w-full border border-border-muted text-text-high font-label-lg px-4 py-2 rounded hover:bg-surface-variant transition-colors uppercase">Start Building</button>
+</div>
+<!-- Professional -->
+<div class="glass-panel rounded-lg p-6 flex flex-col border-primary-container relative overflow-hidden neon-glow-primary transform md:-translate-y-4">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-fixed font-label-sm px-3 py-1 rounded-bl-lg uppercase tracking-widest font-bold">Recommended</div>
+<div class="uppercase font-label-sm text-primary-container tracking-widest mb-2">Production</div>
+<h3 class="font-headline-md text-text-high mb-4">Professional</h3>
+<div class="text-2xl font-mono-data text-text-high mb-6">$499<span class="text-sm text-text-dim font-body-md">/mo</span></div>
+<ul class="font-body-md text-text-dim flex flex-col gap-3 flex-grow mb-8">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary-container text-[18px]">check</span> Live brokerage integration</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary-container text-[18px]">check</span> High-throughput API limits</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary-container text-[18px]">check</span> Real-time options data</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary-container text-[18px]">check</span> Priority email support</li>
+</ul>
+<button class="w-full bg-primary-container text-on-primary-fixed font-label-lg px-4 py-2 rounded hover:bg-primary-fixed transition-colors uppercase">Upgrade to Pro</button>
+</div>
+<!-- Enterprise -->
+<div class="glass-panel rounded-lg p-6 flex flex-col border-border-muted">
+<div class="uppercase font-label-sm text-pink-laser tracking-widest mb-2">Scale</div>
+<h3 class="font-headline-md text-text-high mb-4">Enterprise</h3>
+<div class="text-2xl font-mono-data text-text-high mb-6">Custom</div>
+<ul class="font-body-md text-text-dim flex flex-col gap-3 flex-grow mb-8">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-pink-laser text-[18px]">check</span> Dedicated infrastructure</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-pink-laser text-[18px]">check</span> Custom integrations</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-pink-laser text-[18px]">check</span> SLA guarantees</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-pink-laser text-[18px]">check</span> 24/7 Phone support</li>
+</ul>
+<button class="w-full border border-pink-laser text-pink-laser bg-pink-laser/5 font-label-lg px-4 py-2 rounded hover:bg-pink-laser/10 transition-colors uppercase">Contact Sales</button>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-16 flex flex-col items-center justify-center text-center">
+<h2 class="font-headline-md text-text-high mb-6 uppercase tracking-wider">Ready to centralize your operations?</h2>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="bg-primary-container text-on-primary-fixed font-label-lg px-8 py-3 rounded-DEFAULT hover:neon-glow-primary transition-all w-full sm:w-auto uppercase tracking-wider">
+                    Schedule Demo
+                </button>
+<button class="border border-border-muted text-text-high font-label-lg px-8 py-3 rounded-DEFAULT hover:bg-surface-variant transition-all w-full sm:w-auto uppercase tracking-wider">
+                    Partnership / Investment
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary font-body text-label-sm text-on-surface-variant text-lg font-headline font-bold text-on-surface full-width bottom-0 border-t border-outline-variant dark:border-outline-variant flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto mt-auto">
+<div class="flex flex-col gap-2 mb-6 md:mb-0 text-center md:text-left w-full md:w-auto">
+<span class="text-lg font-headline-md text-on-surface tracking-tighter">Option-Algo</span>
+<span class="text-xs font-mono-data text-text-dim">© 2024 Option-Algo Technologies Inc. Professional grade tools for algorithmic execution.</span>
+<div class="mt-2 text-[10px] font-mono-data text-border-muted flex items-center justify-center md:justify-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-lime-toxic opacity-50"></span> SOC2 Compliant Data Centers
+                <span class="mx-2">|</span>
+<span class="w-1.5 h-1.5 rounded-full bg-lime-toxic opacity-50"></span> End-to-End Encryption
+            </div>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-4 w-full md:w-auto">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary transition-colors font-label-lg" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary transition-colors font-label-lg" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary transition-colors font-label-lg" href="#">Risk Disclosure</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary transition-colors font-label-lg" href="#">Contact Support</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-tertiary dark:hover:text-tertiary transition-colors font-label-lg flex items-center gap-1" href="#">
+<span class="w-2 h-2 rounded-full bg-lime-toxic"></span> Status
+            </a>
+</div>
+</footer>
+</body></html>

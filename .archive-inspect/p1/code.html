@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ayushman | Investor Brief</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#434653",
+                        "outline": "#737784",
+                        "surface-container-low": "#f5f3f4",
+                        "surface-bright": "#faf9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container-high": "#e9e8e9",
+                        "primary-container": "#3366cc",
+                        "tertiary-fixed": "#f9e37a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1b1c1d",
+                        "on-tertiary-fixed": "#211b00",
+                        "surface-tint": "#2259bf",
+                        "on-background": "#1b1c1d",
+                        "outline-variant": "#c3c6d5",
+                        "inverse-on-surface": "#f2f0f1",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#dfe3e8",
+                        "surface-dim": "#dbdadb",
+                        "primary-fixed": "#d9e2ff",
+                        "tertiary-container": "#bfab49",
+                        "surface-variant": "#e3e2e3",
+                        "on-tertiary-fixed-variant": "#524600",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-primary-container": "#e7ebff",
+                        "inverse-primary": "#b1c5ff",
+                        "secondary-fixed-dim": "#c2c7cc",
+                        "background": "#faf9fa",
+                        "on-tertiary-container": "#4a3f00",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#efedee",
+                        "tertiary-fixed-dim": "#dcc661",
+                        "surface-container-highest": "#e3e2e3",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf9fa",
+                        "secondary": "#5a5f63",
+                        "primary": "#094cb2",
+                        "on-primary-fixed-variant": "#00419d",
+                        "on-primary-fixed": "#001946",
+                        "on-secondary-container": "#606569",
+                        "secondary-fixed": "#dfe3e8",
+                        "tertiary": "#6d5e00",
+                        "inverse-surface": "#303031",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "display": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Public Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .editorial-column {
+            column-count: 1;
+            column-gap: 3rem;
+        }
+        @media (min-width: 768px) {
+            .editorial-column {
+                column-count: 2;
+            }
+        }
+        .ghost-border {
+            border: 1px solid rgba(195, 198, 213, 0.15); /* outline-variant at 15% */
+        }
+    </style>
+</head>
+<body class="font-body antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim w-full top-0 sticky transition-all duration-300 ease-in-out z-50">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto w-full bg-surface-container-low dark:bg-surface-container">
+<div class="font-headline text-2xl font-bold text-primary dark:text-primary-fixed">Ayushman</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-headline text-headline-sm tracking-tight leading-none text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1" href="#">Dashboard</a>
+<a class="font-headline text-headline-sm tracking-tight leading-none text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-bright/10 px-2 py-1 rounded" href="#">Advisory</a>
+<a class="font-headline text-headline-sm tracking-tight leading-none text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-bright/10 px-2 py-1 rounded" href="#">Insights</a>
+<a class="font-headline text-headline-sm tracking-tight leading-none text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-bright/10 px-2 py-1 rounded" href="#">Network</a>
+<a class="font-headline text-headline-sm tracking-tight leading-none text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-bright/10 px-2 py-1 rounded" href="#">Archival</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-label font-medium hover:opacity-90 transition-opacity">
+                Consult Now
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-[1440px] mx-auto w-full px-6 md:px-12 py-16 space-y-32">
+<!-- Hero Section -->
+<header class="max-w-4xl space-y-8">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label text-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">description</span>
+<span>Investor Brief 2024</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-on-background">
+                Secure, Verified Consultations &amp; Practice Management.
+            </h1>
+<p class="font-headline text-2xl text-on-surface-variant leading-relaxed max-w-3xl">
+                A multi‑tenant platform designed exclusively for clinics, coaching networks, and enterprise employee‑support programs requiring absolute governance.
+            </p>
+</header>
+<!-- Executive Summary - Editorial Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4">
+<div class="sticky top-32 space-y-6">
+<h2 class="font-label text-sm uppercase tracking-widest text-primary font-semibold">The Core Thesis</h2>
+<p class="font-headline text-2xl text-on-background leading-snug">
+                        Focusing on operational rigor and compliance gaps in the professional advisory space.
+                    </p>
+<div class="w-12 h-1 bg-tertiary"></div>
+</div>
+</div>
+<div class="lg:col-span-8 editorial-column font-body text-lg text-on-surface-variant leading-relaxed">
+<p class="mb-6">
+                    The current landscape of professional consultation is marred by <strong>fragmented scheduling</strong>, manual credential management, and severe governance gaps. Organizations struggle to maintain oversight across disparate tools used by their practitioners.
+                </p>
+<p class="mb-6">
+                    Ayushman provides a unified solution: streamlined onboarding with built-in verification, intuitive discovery and booking mechanisms, immutable session logs, and automated workflows. By centralizing these functions, we mitigate compliance risks and reduce operational overhead for enterprise clients.
+                </p>
+</div>
+</section>
+<!-- Key Capabilities - Bento Grid -->
+<section class="space-y-12">
+<h2 class="font-headline text-4xl font-bold text-on-background border-b border-surface-container-high pb-4">Architectural Capabilities</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ghost-border flex flex-col h-full hover:bg-surface-bright transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">verified_user</span>
+<h3 class="font-headline text-xl font-bold mb-3">Verified Onboarding</h3>
+<p class="font-body text-on-surface-variant flex-grow">Strict credential verification pipelines ensuring only qualified practitioners enter the network.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ghost-border flex flex-col h-full hover:bg-surface-bright transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">calendar_month</span>
+<h3 class="font-headline text-xl font-bold mb-3">Intelligent Scheduling</h3>
+<p class="font-body text-on-surface-variant flex-grow">Conflict-free booking systems integrated directly with practitioner availability and enterprise constraints.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ghost-border flex flex-col h-full hover:bg-surface-bright transition-colors duration-300 lg:row-span-2 lg:col-start-3 bg-surface-dim/30">
+<img class="w-full h-48 object-cover rounded-lg mb-6 mix-blend-multiply opacity-80" data-alt="A high-end editorial style conceptual image showing a minimalist server room with glowing blue lights, representing secure data architecture. The aesthetic is clean, professional, light mode, with a scholarly and authoritative tone using subtle shades of blue and stark whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtsxcwooD4dkaw0PGEHyko55WGtiYfYIanaLUqlVUxBTbP_epBKKwUgIfcFRFFHMyJe6yi9sslBZaaVPB7TQaNoQFy_ban05TRGer4AaDPbfH6rTmjp7jDMczp_O_rSORe7I7TXr3l3ZptRzhKgN9jFmhW8n-einTCJP7pR2QnMw_h4xDo1xJ2uJo3SkBSAEdSm6bOXeAyMkZPVbcQbV-nADFyxOQyjef7pMfpVUOPCuIcUqgz57uAlg"/>
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">admin_panel_settings</span>
+<h3 class="font-headline text-2xl font-bold mb-3">Tenant-Aware Governance</h3>
+<p class="font-body text-on-surface-variant flex-grow">A true multi-tenant architecture providing siloed data environments and distinct administrative controls for distinct enterprise clients.</p>
+<div class="mt-8 pt-6 border-t border-surface-container-highest">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Readiness Score</span>
+<div class="flex items-center mt-2 space-x-2">
+<div class="h-2 flex-grow bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[60%]"></div>
+</div>
+<span class="font-headline font-bold text-primary">6/10</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ghost-border flex flex-col h-full hover:bg-surface-bright transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">receipt_long</span>
+<h3 class="font-headline text-xl font-bold mb-3">Session Logging</h3>
+<p class="font-body text-on-surface-variant flex-grow">Immutable, auditable records of all consultations for compliance and quality assurance.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ghost-border flex flex-col h-full hover:bg-surface-bright transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">account_tree</span>
+<h3 class="font-headline text-xl font-bold mb-3">Workflow Automation</h3>
+<p class="font-body text-on-surface-variant flex-grow">Automated reminders, follow-ups, and billing triggers reducing administrative friction.</p>
+</div>
+</div>
+</section>
+<!-- Market & Monetization -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-16 bg-surface-container p-12 md:p-16 rounded-xl">
+<div>
+<h2 class="font-label text-sm uppercase tracking-widest text-on-surface-variant font-semibold mb-6">Market Opportunity</h2>
+<h3 class="font-headline text-3xl font-bold mb-4">Expanding Needs</h3>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+                    Targeting high-growth sectors requiring structured advisory: Mental Health clinics, Executive Coaching networks, and comprehensive Employee Assistance Programs (EAP).
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-sm">Mental Health</span>
+<span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-sm">Executive Coaching</span>
+<span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-sm">EAP Providers</span>
+</div>
+</div>
+<div>
+<h2 class="font-label text-sm uppercase tracking-widest text-on-surface-variant font-semibold mb-6">Monetization Strategy</h2>
+<h3 class="font-headline text-3xl font-bold mb-4">Sustainable Growth</h3>
+<ul class="space-y-4 font-body text-lg text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-tertiary mr-3 mt-1">layers</span>
+<span><strong>Tiered Subscriptions:</strong> Base platform access scaled by organizational size.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-tertiary mr-3 mt-1">group</span>
+<span><strong>Per-User Seats:</strong> Variable pricing based on active practitioner count.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-tertiary mr-3 mt-1">payments</span>
+<span><strong>Commission Model:</strong> Fractional fee on transactions processed through the platform.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Investment Ask -->
+<section class="text-center max-w-3xl mx-auto space-y-8">
+<h2 class="font-headline text-5xl font-bold">Investment Ask</h2>
+<p class="font-body text-xl text-on-surface-variant">
+                Seeking Seed funding for enterprise hardening. Capital will be allocated to implementing Row Level Security (RLS), SSO integration, and robust payment gateways.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 pt-8">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-label font-bold text-lg hover:opacity-90 transition-opacity shadow-sm">
+                    Explore Seed Investment
+                </button>
+<button class="bg-surface-container-high text-primary px-8 py-4 rounded-xl font-label font-bold text-lg hover:bg-surface-dim transition-colors shadow-sm">
+                    Request Live Demo
+                </button>
+</div>
+<div class="pt-4">
+<a class="font-label text-primary hover:underline underline-offset-4" href="#">Discuss Pilot Program</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim dark:bg-inverse-surface w-full mt-auto transition-all duration-300 ease-in-out">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full border-t border-outline-variant/15 bg-surface-container-highest dark:bg-surface-container max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0 space-y-4 text-center md:text-left">
+<div class="font-headline text-xl text-on-surface dark:text-inverse-on-surface">Ayushman</div>
+<div class="font-label text-label-md uppercase tracking-wider text-primary dark:text-primary-fixed-dim">
+                    © 2024 Ayushman Professional Advisory. All rights reserved. Registered under the Archival Standards Act.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-6 font-label text-label-md uppercase tracking-wider">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-90 hover:opacity-100 duration-200" href="#">Contact Partner</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-90 hover:opacity-100 duration-200" href="#">Privacy Protocol</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-90 hover:opacity-100 duration-200" href="#">Investor Relations</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-90 hover:opacity-100 duration-200" href="#">Terms of Practice</a>
+</div>
+</div>
+</footer>
+</body></html>
