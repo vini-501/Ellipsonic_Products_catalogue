@@ -15,6 +15,7 @@ type Product = {
   features: string[]
   audience: string[]
   url?: string
+  images?: string[]
 }
 
 const domainOptions = [
@@ -45,6 +46,11 @@ const products: Product[] = [
     features: ['Unified GSTIN ledger', 'Automated GST posting', 'Double-entry controls', 'Append-only audit trails', 'Branch-level permissions'],
     audience: ['Multi-branch enterprises', 'Finance and controllership teams', 'Indian corporate groups'],
     url: 'https://nextwave.ellipsonic.com/',
+    images: [
+      '/next-wave/Screenshot 2026-08-24 at 16.44.25.png',
+      '/next-wave/Screenshot 2026-08-24 at 16.45.05.png',
+      '/next-wave/Screenshot 2026-08-24 at 16.49.46.png',
+    ],
   },
   {
     id: 'optionalgo',
@@ -59,6 +65,12 @@ const products: Product[] = [
       'Option-Algo centralizes option strategy workflows with secure APIs, live analytics, and the infrastructure teams need to backtest, paper trade, and go live.',
     features: ['REST and WebSocket APIs', 'Strategy versioning', 'Real-time Greeks and PnL', 'JWT access controls', 'Brokerage integrations'],
     audience: ['Quant trading teams', 'Institutional brokers', 'Fintech infrastructure groups'],
+    images: [
+      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.29.jpeg',
+      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.29 (1).jpeg',
+      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.30.jpeg',
+      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.30 (1).jpeg',
+    ],
   },
   {
     id: 'securegate',
@@ -89,6 +101,12 @@ const products: Product[] = [
     features: ['Verified onboarding', 'Intelligent scheduling', 'Tenant-aware governance', 'Immutable session logs', 'Workflow automation'],
     audience: ['Mental health clinics', 'Executive coaching networks', 'Employee assistance programs'],
     url: 'http://ayushmaan.ellipsonic.com/',
+    images: [
+      '/aayushmaan/01.png',
+      '/aayushmaan/02.png',
+      '/aayushmaan/03.png',
+      '/aayushmaan/04.png',
+    ],
   },
   {
     id: 'chalk',
@@ -103,6 +121,11 @@ const products: Product[] = [
       'Chalk AI turns a spoken question into a live explanation: a multimodal tutor that talks, draws, captions, and responds naturally in the same moment.',
     features: ['Real-time voice', 'Live programmatic whiteboard', 'Synchronized visuals', 'Barge-in & tagging', 'Post-session summaries'],
     audience: ['EdTech platforms', 'Tutoring marketplaces', 'Corporate learning teams'],
+    images: [
+      '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.27.jpeg',
+      '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.27 (1).jpeg',
+      '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.28.jpeg',
+    ],
   },
   {
     id: 'corecart',
@@ -147,6 +170,11 @@ const products: Product[] = [
     features: ['Logical multi-tenant isolation', 'Business-hours SLA calculation', 'Full ticket lifecycle automation', 'Immutable audit logs & history', 'Role-based access & S3 storage'],
     audience: ['MSPs and digital agencies', 'Enterprise software vendors', 'IT & customer operations teams'],
     url: 'http://ticketing.ellipsonic.com/',
+    images: [
+      '/ellip-desk/WhatsApp Image 2026-08-24 at 17.16.52.jpeg',
+      '/ellip-desk/WhatsApp Image 2026-08-24 at 17.17.20.jpeg',
+      '/ellip-desk/WhatsApp Image 2026-08-24 at 17.18.18.jpeg',
+    ],
   },
   {
     id: 'bondgrid',
@@ -175,6 +203,13 @@ const products: Product[] = [
       'LexDraft bridges the gap between static templates and rigorous partner review cycles, turning firm-approved clauses into client-ready, auditable documents faster.',
     features: ['Firm-approved clause repository', 'Multi-tier partner review & sign-off', 'Task Kanban & drafting stages', 'Immutable redline version history', 'Simulated AI & audit activity logs'],
     audience: ['Mid-to-large law firms', 'Corporate legal departments', 'M&A and transactional legal teams'],
+    images: [
+      '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.50.jpeg',
+      '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.51.jpeg',
+      '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.51 (1).jpeg',
+      '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.51 (2).jpeg',
+      '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.52.jpeg',
+    ],
   },
 ]
 
@@ -201,7 +236,46 @@ function FilterIcon() {
   )
 }
 
+function ScreenshotGallery({ images, name }: { images: string[]; name: string }) {
+  const [current, setCurrent] = useState(0)
+  const total = images.length
+  const prev = () => setCurrent((c) => Math.max(0, c - 1))
+  const next = () => setCurrent((c) => Math.min(total - 1, c + 1))
+  return (
+    <div className="gallery-frame" aria-label={`${name} screenshots`}>
+      <div className="gallery-viewport">
+        <div className="gallery-track" style={{ transform: `translateX(-${current * 100}%)` }}>
+          {images.map((src, i) => (
+            <div className="gallery-slide" key={i}>
+              <img src={src} alt={`${name} screenshot ${i + 1} of ${total}`} loading="lazy" draggable={false} />
+            </div>
+          ))}
+        </div>
+        {current > 0 && (
+          <button className="gallery-arrow gallery-arrow-left" onClick={prev} aria-label="Previous screenshot">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
+        )}
+        {current < total - 1 && (
+          <button className="gallery-arrow gallery-arrow-right" onClick={next} aria-label="Next screenshot">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 6 15 12 9 18" /></svg>
+          </button>
+        )}
+      </div>
+      <div className="gallery-dots">
+        {images.map((_, i) => (
+          <button key={i} className={`gallery-dot${current === i ? ' is-active' : ''}`} onClick={() => setCurrent(i)} aria-label={`Go to screenshot ${i + 1}`} />
+        ))}
+        <span className="gallery-counter">{current + 1} / {total}</span>
+      </div>
+    </div>
+  )
+}
+
 function ProductMockup({ product }: { product: (typeof products)[number] }) {
+  if (product.images && product.images.length > 0) {
+    return <ScreenshotGallery images={product.images} name={product.name} />
+  }
   if (product.id === 'lexdraft') {
     return (
       <div className="mockup lexdraft-mockup" aria-label="LexDraft product preview">
