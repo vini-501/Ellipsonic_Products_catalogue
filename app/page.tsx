@@ -19,22 +19,54 @@ type Product = {
 }
 
 const domainOptions = [
-  { id: 'crm', label: 'CRM & Networks' },
-  { id: 'legal', label: 'Legal & Governance' },
-  { id: 'workforce', label: 'Workforce & HR' },
-  { id: 'operations', label: 'Support & SLAs' },
-  { id: 'finance', label: 'Finance & GST' },
-  { id: 'trading', label: 'Trading & fintech' },
-  { id: 'security', label: 'Security & access' },
-  { id: 'health', label: 'Health & wellbeing' },
+  // { id: 'crm', label: 'CRM & Networks' },
   { id: 'education', label: 'Education & learning' },
-  { id: 'commerce', label: 'Commerce & retail' },
+  { id: 'finance', label: 'Finance & GST' },
+  { id: 'operations', label: 'Support & SLAs' },
+  { id: 'legal', label: 'Legal & Governance' },
+  { id: 'hospitality', label: 'Hospitality & F&B' },
+  // { id: 'workforce', label: 'Workforce & HR' },
+  // { id: 'trading', label: 'Trading & fintech' },
+  // { id: 'security', label: 'Security & access' },
+  // { id: 'health', label: 'Health & wellbeing' },
+  // { id: 'commerce', label: 'Commerce & retail' },
 ] as const
 
 const products: Product[] = [
   {
-    id: 'nextwave',
+    id: 'prerana',
     number: '01',
+    name: 'Prerana 2.0',
+    category: 'Governed AI learning & academic operations',
+    color: 'orange',
+    domains: ['education'],
+    eyebrow: 'For schools, colleges & multi-campus education networks',
+    title: 'Turn institutional content into better student learning.',
+    description:
+      'Prerana is a multi-tenant EdTech platform that helps schools and colleges manage academic operations, govern learning content, measure student progress, and deliver AI-powered study experiences in one secure workspace.',
+    features: [
+      'Multi-school tenant isolation',
+      'Curriculum & resource governance',
+      'Source-aware AI tutor & study notes',
+      'Quizzes, assignments & analytics',
+      'Role-based access & audit logs',
+    ],
+    audience: [
+      'K-12 schools & school groups',
+      'Colleges & universities',
+      'Education networks & tutoring academies',
+    ],
+    images: [
+      '/prerana/WhatsApp Image 2026-08-25 at 13.09.36.jpeg',
+      '/prerana/WhatsApp Image 2026-08-25 at 13.10.02.jpeg',
+      '/prerana/WhatsApp Image 2026-08-25 at 13.10.33.jpeg',
+      '/prerana/WhatsApp Image 2026-08-25 at 13.11.39.jpeg',
+      '/prerana/WhatsApp Image 2026-08-25 at 13.14.21.jpeg',
+    ],
+  },
+  {
+    id: 'nextwave',
+    number: '02',
     name: 'NextWave',
     category: 'Enterprise finance & GST',
     color: 'navy',
@@ -52,6 +84,7 @@ const products: Product[] = [
       '/next-wave/Screenshot 2026-08-24 at 16.49.46.png',
     ],
   },
+  /*
   {
     id: 'optionalgo',
     number: '02',
@@ -156,13 +189,14 @@ const products: Product[] = [
     audience: ['Multi-branch enterprises', 'Multi-shift manufacturing & retail', 'HR & payroll compliance teams'],
     url: 'http://smarteam.ellipsonic.com/',
   },
+  */
   {
     id: 'elipdesk',
-    number: '08',
+    number: '03',
     name: 'Elipdesk',
     category: 'Tenant-aware ticketing & SLAs',
     color: 'elipdesk',
-    domains: ['operations', 'security'],
+    domains: ['operations'],
     eyebrow: 'For MSPs, software vendors & enterprise support teams',
     title: 'Deliver on SLAs. Delight your clients.',
     description:
@@ -176,6 +210,7 @@ const products: Product[] = [
       '/ellip-desk/WhatsApp Image 2026-08-24 at 17.18.18.jpeg',
     ],
   },
+  /*
   {
     id: 'bondgrid',
     number: '09',
@@ -190,13 +225,14 @@ const products: Product[] = [
     features: ['Relationship intelligence & mapping', 'Auditable activity & immutable timeline', 'Account hierarchies & stakeholder webs', 'Deal pipeline tracking & automation', 'Role-based access & API integrations'],
     audience: ['Professional services firms', 'Wealth management & advisory', 'B2B enterprise sales teams'],
   },
+  */
   {
     id: 'lexdraft',
-    number: '10',
+    number: '04',
     name: 'LexDraft',
     category: 'Legal document automation & workflows',
     color: 'lexdraft',
-    domains: ['legal', 'operations'],
+    domains: ['legal'],
     eyebrow: 'For law firms, corporate legal & partner review teams',
     title: 'Governed drafting. Partner-approved.',
     description:
@@ -211,6 +247,35 @@ const products: Product[] = [
       '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.52.jpeg',
     ],
   },
+  {
+    id: 'blizzbooks',
+    number: '05',
+    name: 'Blizz Books',
+    category: 'F&B inventory & multi-branch ERP',
+    color: 'blizzbooks',
+    domains: ['hospitality'],
+    eyebrow: 'For restaurant groups, hotels, cloud kitchens & multi-branch operators',
+    title: 'Take total control of your F&B inventory & operations.',
+    description:
+      'Blizz Books is a modular, cloud-based operations platform that unifies inventory, three-mode GRN receiving, wastage controls, and multi-branch governance into one auditable back-of-house system.',
+    features: [
+      'Three-mode GRN stock entry (bulk, unit, pack)',
+      'Strict Organisation → Branch isolation',
+      'Role-switching workflows for lean teams',
+      'Immutable audit & wastage tracking',
+      'Modular expansion: recipes, production & analytics',
+    ],
+    audience: [
+      'Restaurant groups & chains',
+      'Hotels & resort kitchens',
+      'Cloud kitchens & multi-unit operators',
+      'Store managers & F&B auditors',
+    ],
+    images: [
+      '/blizz-books/WhatsApp Image 2026-08-25 at 12.10.35.jpeg',
+      '/blizz-books/WhatsApp Image 2026-08-25 at 12.13.07.jpeg',
+    ],
+  },
 ]
 
 function ArrowIcon() {
@@ -220,8 +285,8 @@ function ArrowIcon() {
 function FilterIcon() {
   return (
     <svg
-      width="12"
-      height="12"
+      width="13"
+      height="13"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -234,6 +299,62 @@ function FilterIcon() {
       <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
     </svg>
   )
+}
+
+function DomainIcon({ id }: { id: string }) {
+  if (id === 'education') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
+      </svg>
+    )
+  }
+  if (id === 'finance') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <line x1="2" y1="10" x2="22" y2="10" />
+        <line x1="7" y1="15" x2="7.01" y2="15" strokeWidth="3" />
+        <line x1="12" y1="15" x2="17" y2="15" />
+      </svg>
+    )
+  }
+  if (id === 'operations') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    )
+  }
+  if (id === 'legal') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+        <path d="M7 21h10" />
+        <path d="M12 3v18" />
+      </svg>
+    )
+  }
+  if (id === 'hospitality') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+        <path d="M7 2v20" />
+        <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+      </svg>
+    )
+  }
+  if (id === 'security') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    )
+  }
+  return null
 }
 
 function ScreenshotGallery({ images, name }: { images: string[]; name: string }) {
@@ -538,12 +659,13 @@ function ProductMockup({ product }: { product: (typeof products)[number] }) {
 
 export default function Page() {
   const [demoProduct, setDemoProduct] = useState<string | null>(null)
-  const [activeDomain, setActiveDomain] = useState<string | null>(null)
+  const [activeDomain, setActiveDomain] = useState<string>('education')
   const [email, setEmail] = useState('')
   const [formState, setFormState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
   const selected = products.find((p) => p.id === demoProduct)
-  const visibleProducts = activeDomain ? products.filter((product) => product.domains.includes(activeDomain)) : products
+  const selectedDomainObj = domainOptions.find((d) => d.id === activeDomain)
+  const visibleProducts = products.filter((product) => product.domains.includes(activeDomain))
 
   const closeModal = () => {
     setDemoProduct(null)
@@ -574,9 +696,86 @@ export default function Page() {
   return (
     <main>
       <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#why">Why Ellipsonic</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
-      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Ten products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
+      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Five products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
       <section className="intro" id="why"><div className="section-label">01 / THE ELLIPSONIC APPROACH</div><div className="intro-content"><h2>Built around the<br /><span>human outcome.</span></h2><div><p>Our products are not designed to add another layer of complexity. They are designed to make important work more understandable, more accountable, and easier to move forward.</p><a className="text-link" href="#suite">See what we make <ArrowIcon /></a></div></div></section>
-      <section className="suite" id="suite"><div className="section-heading"><div><p className="kicker"><span /> THE PRODUCT SUITE</p><h2>Ten products.<br /><em>Ten clear advantages.</em></h2></div><p>Explore the products below to understand what they do, who they are for, and where they can take your organization.</p></div><div className="domain-filter" aria-label="Filter products by domain"><span className="filter-label"><FilterIcon />FILTER BY DOMAIN</span><div className="filter-options">{domainOptions.map((domain) => <button key={domain.id} className={`filter-chip ${activeDomain === domain.id ? 'is-active' : ''}`} aria-pressed={activeDomain === domain.id} onClick={() => setActiveDomain(activeDomain === domain.id ? null : domain.id)}>{domain.label}{activeDomain === domain.id && <span className="chip-remove" aria-hidden="true">✕</span>}</button>)}{activeDomain && <button type="button" className="clear-filter-btn" onClick={() => setActiveDomain(null)} aria-label="Clear active domain filter" title="Clear filter"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg><span>Clear filter</span></button>}</div><span className="filter-count">Showing {visibleProducts.length} of {products.length}</span></div><div className="product-list">{visibleProducts.map((product) => <article className={`product product-${product.color}`} key={product.id}><div className="product-top"><div className="product-index">{product.number} <span>/ 10</span></div><div className="product-category">{product.category}</div></div><div className="product-grid"><div className="product-info"><p className="product-eyebrow">{product.eyebrow}</p><h3>{product.title}</h3><p className="product-description">{product.description}</p><div className="feature-list">{product.features.map((feature) => <span key={feature}><i>✓</i>{feature}</span>)}</div><div className="audience"><small>BEST FOR</small><div>{product.audience.map((a) => <span key={a}>{a}</span>)}</div></div><div className="product-actions"><a className="button button-dark" href={product.url ?? `#${product.id}-link`} target={product.url ? '_blank' : undefined} rel={product.url ? 'noopener noreferrer' : undefined}>View product <ArrowIcon /></a><button className="button button-light" onClick={() => setDemoProduct(product.id)}>Book a demo <ArrowIcon /></button></div></div><ProductMockup product={product} /></div></article>)}</div></section>
+      <section className="suite" id="suite">
+        <div className="section-heading">
+          <div>
+            <p className="kicker"><span /> THE PRODUCT SUITE</p>
+            <h2>{selectedDomainObj?.label}.<br /><em>{visibleProducts.length === 1 ? '1 tailored product.' : `${visibleProducts.length} tailored products.`}</em></h2>
+          </div>
+          <p>
+            Viewing specialized software solutions engineered for {selectedDomainObj?.label.toLowerCase()}.
+          </p>
+        </div>
+
+        <div className="domain-filter" aria-label="Filter products by domain">
+          <span className="filter-label"><FilterIcon /> DOMAIN FOCUS</span>
+          <div className="filter-options">
+            {domainOptions.map((domain) => (
+              <button
+                key={domain.id}
+                className={`filter-chip ${activeDomain === domain.id ? 'is-active' : ''}`}
+                aria-pressed={activeDomain === domain.id}
+                onClick={() => setActiveDomain(domain.id)}
+              >
+                <DomainIcon id={domain.id} />
+                <span>{domain.label}</span>
+              </button>
+            ))}
+          </div>
+          <span className="filter-count">
+            Showing <strong>{visibleProducts.length}</strong> product{visibleProducts.length === 1 ? '' : 's'} in {selectedDomainObj?.label}
+          </span>
+        </div>
+
+        <div className="product-list">
+          {visibleProducts.map((product) => (
+            <article className={`product product-${product.color}`} key={product.id}>
+              <div className="product-top">
+                <div className="product-index">{product.number} <span>/ 05</span></div>
+                <div className="product-category">{product.category}</div>
+              </div>
+              <div className="product-grid">
+                <div className="product-info">
+                  <p className="product-eyebrow">{product.eyebrow}</p>
+                  <h3>{product.title}</h3>
+                  <p className="product-description">{product.description}</p>
+                  <div className="feature-list">
+                    {product.features.map((feature) => (
+                      <span key={feature}><i>✓</i>{feature}</span>
+                    ))}
+                  </div>
+                  <div className="audience">
+                    <small>BEST FOR</small>
+                    <div>
+                      {product.audience.map((a) => (
+                        <span key={a}>{a}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="product-actions">
+                    <a
+                      className="button button-dark"
+                      href={product.url ?? `#${product.id}-link`}
+                      target={product.url ? '_blank' : undefined}
+                      rel={product.url ? 'noopener noreferrer' : undefined}
+                    >
+                      View product <ArrowIcon />
+                    </a>
+                    <button className="button button-light" onClick={() => setDemoProduct(product.id)}>
+                      Book a demo <ArrowIcon />
+                    </button>
+                  </div>
+                </div>
+                <div className="mockup-wrap">
+                  <ProductMockup product={product} />
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="contact" id="contact"><div className="contact-orbit orbit-one" /><div className="contact-orbit orbit-two" /><p className="kicker"><span /> LET&apos;S MAKE IT CLEAR</p><h2>Have a complex problem?<br /><em>Let&apos;s talk about it.</em></h2><p>Tell us what you are building, and we&apos;ll show you where a more thoughtful system can help.</p><button className="button button-bright" onClick={() => setDemoProduct('Ellipsonic')}>Start a conversation <ArrowIcon /></button></section>
       <footer><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><span>Product catalogue · 2024</span><span>Made for meaningful work.</span></footer>
       {demoProduct && <div className="modal-backdrop" role="presentation" onClick={closeModal}><div className="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" onClick={(e) => e.stopPropagation()}>
