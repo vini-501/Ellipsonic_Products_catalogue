@@ -539,8 +539,38 @@ function ProductMockup({ product }: { product: (typeof products)[number] }) {
 export default function Page() {
   const [demoProduct, setDemoProduct] = useState<string | null>(null)
   const [activeDomain, setActiveDomain] = useState<string | null>(null)
+  const [email, setEmail] = useState('')
+  const [formState, setFormState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
   const selected = products.find((p) => p.id === demoProduct)
   const visibleProducts = activeDomain ? products.filter((product) => product.domains.includes(activeDomain)) : products
+
+  const closeModal = () => {
+    setDemoProduct(null)
+    setEmail('')
+    setFormState('idle')
+    setErrorMsg('')
+  }
+
+  const handleSubmit = async () => {
+    if (!email || !email.includes('@')) return
+    setFormState('sending')
+    setErrorMsg('')
+    try {
+      const res = await fetch('/api/demo-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, product: selected?.name ?? 'Ellipsonic (General)' }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Something went wrong')
+      setFormState('sent')
+    } catch (err: unknown) {
+      setFormState('error')
+      setErrorMsg(err instanceof Error ? err.message : 'Failed to send request')
+    }
+  }
+
   return (
     <main>
       <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#why">Why Ellipsonic</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
@@ -549,7 +579,41 @@ export default function Page() {
       <section className="suite" id="suite"><div className="section-heading"><div><p className="kicker"><span /> THE PRODUCT SUITE</p><h2>Ten products.<br /><em>Ten clear advantages.</em></h2></div><p>Explore the products below to understand what they do, who they are for, and where they can take your organization.</p></div><div className="domain-filter" aria-label="Filter products by domain"><span className="filter-label"><FilterIcon />FILTER BY DOMAIN</span><div className="filter-options">{domainOptions.map((domain) => <button key={domain.id} className={`filter-chip ${activeDomain === domain.id ? 'is-active' : ''}`} aria-pressed={activeDomain === domain.id} onClick={() => setActiveDomain(activeDomain === domain.id ? null : domain.id)}>{domain.label}{activeDomain === domain.id && <span className="chip-remove" aria-hidden="true">✕</span>}</button>)}{activeDomain && <button type="button" className="clear-filter-btn" onClick={() => setActiveDomain(null)} aria-label="Clear active domain filter" title="Clear filter"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg><span>Clear filter</span></button>}</div><span className="filter-count">Showing {visibleProducts.length} of {products.length}</span></div><div className="product-list">{visibleProducts.map((product) => <article className={`product product-${product.color}`} key={product.id}><div className="product-top"><div className="product-index">{product.number} <span>/ 10</span></div><div className="product-category">{product.category}</div></div><div className="product-grid"><div className="product-info"><p className="product-eyebrow">{product.eyebrow}</p><h3>{product.title}</h3><p className="product-description">{product.description}</p><div className="feature-list">{product.features.map((feature) => <span key={feature}><i>✓</i>{feature}</span>)}</div><div className="audience"><small>BEST FOR</small><div>{product.audience.map((a) => <span key={a}>{a}</span>)}</div></div><div className="product-actions"><a className="button button-dark" href={product.url ?? `#${product.id}-link`} target={product.url ? '_blank' : undefined} rel={product.url ? 'noopener noreferrer' : undefined}>View product <ArrowIcon /></a><button className="button button-light" onClick={() => setDemoProduct(product.id)}>Book a demo <ArrowIcon /></button></div></div><ProductMockup product={product} /></div></article>)}</div></section>
       <section className="contact" id="contact"><div className="contact-orbit orbit-one" /><div className="contact-orbit orbit-two" /><p className="kicker"><span /> LET&apos;S MAKE IT CLEAR</p><h2>Have a complex problem?<br /><em>Let&apos;s talk about it.</em></h2><p>Tell us what you are building, and we&apos;ll show you where a more thoughtful system can help.</p><button className="button button-bright" onClick={() => setDemoProduct('Ellipsonic')}>Start a conversation <ArrowIcon /></button></section>
       <footer><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><span>Product catalogue · 2024</span><span>Made for meaningful work.</span></footer>
-      {demoProduct && <div className="modal-backdrop" role="presentation" onClick={() => setDemoProduct(null)}><div className="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" onClick={(e) => e.stopPropagation()}><button className="modal-close" aria-label="Close demo form" onClick={() => setDemoProduct(null)}>×</button><p className="kicker"><span /> REQUEST A DEMO</p><h2 id="demo-title">Let&apos;s show you<br /><em>{selected?.name ?? 'Ellipsonic'} in action.</em></h2><p>Use this placeholder form for now. Connect it to your preferred booking flow when you are ready.</p><label>Your work email<input type="email" placeholder="you@company.com" /></label><button className="button button-dark" onClick={() => setDemoProduct(null)}>Request demo <ArrowIcon /></button></div></div>}
+      {demoProduct && <div className="modal-backdrop" role="presentation" onClick={closeModal}><div className="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" aria-label="Close demo form" onClick={closeModal}>×</button>
+        {formState === 'sent' ? (
+          <div className="demo-success">
+            <span className="success-icon">✓</span>
+            <h2>Request sent!</h2>
+            <p>We&apos;ll get back to you at <strong>{email}</strong> about <strong>{selected?.name ?? 'Ellipsonic'}</strong> shortly.</p>
+            <button className="button button-dark" onClick={closeModal}>Close <ArrowIcon /></button>
+          </div>
+        ) : (
+          <>
+            <p className="kicker"><span /> REQUEST A DEMO</p>
+            <h2 id="demo-title">Let&apos;s show you<br /><em>{selected?.name ?? 'Ellipsonic'} in action.</em></h2>
+            <p>Share your work email and our team will reach out to schedule a walkthrough.</p>
+            <label>Your work email
+              <input
+                type="email"
+                placeholder="you@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+                disabled={formState === 'sending'}
+              />
+            </label>
+            {formState === 'error' && <p className="form-error">{errorMsg}</p>}
+            <button
+              className="button button-dark"
+              onClick={handleSubmit}
+              disabled={formState === 'sending' || !email.includes('@')}
+            >
+              {formState === 'sending' ? 'Sending…' : 'Request demo'} <ArrowIcon />
+            </button>
+          </>
+        )}
+      </div></div>}
     </main>
   )
 }
