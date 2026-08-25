@@ -37,26 +37,27 @@ const products: Product[] = [
   {
     id: 'prerana',
     number: '01',
-    name: 'Prerana 2.0',
+    name: 'Prerana Smart Guru',
     category: 'Governed AI learning & academic operations',
     color: 'orange',
     domains: ['education'],
-    eyebrow: 'For schools, colleges & multi-campus education networks',
-    title: 'Turn institutional content into better student learning.',
+    eyebrow: 'Governed AI Learning & Academic Operations',
+    title: 'Turn Institutional Content into Better Student Learning.',
     description:
-      'Prerana is a multi-tenant EdTech platform that helps schools and colleges manage academic operations, govern learning content, measure student progress, and deliver AI-powered study experiences in one secure workspace.',
+      'Multi-school tenant isolation, source-aware AI tutoring, and curriculum governance in one secure workspace.',
     features: [
-      'Multi-school tenant isolation',
-      'Curriculum & resource governance',
-      'Source-aware AI tutor & study notes',
-      'Quizzes, assignments & analytics',
-      'Role-based access & audit logs',
+      'Multi-School Tenant Isolation',
+      'Curriculum & Content Governance',
+      'Source-Aware AI Study Tutor',
+      'Live Quizzes & Real-Time Analytics',
+      'Role-Based RBAC & Audit Trails',
     ],
     audience: [
-      'K-12 schools & school groups',
-      'Colleges & universities',
-      'Education networks & tutoring academies',
+      'K-12 Schools & Groups',
+      'Colleges & Universities',
+      'Higher Ed & Tutoring Academies',
     ],
+    url: 'https://prerana.smartguru.in/',
     images: [
       '/prerana/WhatsApp Image 2026-08-25 at 13.09.36.jpeg',
       '/prerana/WhatsApp Image 2026-08-25 at 13.10.02.jpeg',
@@ -72,12 +73,18 @@ const products: Product[] = [
     category: 'Enterprise finance & GST',
     color: 'navy',
     domains: ['finance'],
-    eyebrow: 'For multi-branch Indian businesses and finance teams',
-    title: 'Close faster. Stay audit-ready.',
+    eyebrow: 'Enterprise Finance, Multi-Branch Ledgers & GST',
+    title: 'Close Books Faster. Stay 100% Audit-Ready.',
     description:
-      'NextWave unifies multi-branch ledgers, automates India-first GST workflows, and preserves every financial decision in an immutable audit trail.',
-    features: ['Unified GSTIN ledger', 'Automated GST posting', 'Double-entry controls', 'Append-only audit trails', 'Branch-level permissions'],
-    audience: ['Multi-branch enterprises', 'Finance and controllership teams', 'Indian corporate groups'],
+      'Unified ledgers, instant automated GST posting, and double-entry controls with immutable history.',
+    features: [
+      'Unified Multi-GSTIN Ledgers',
+      'Automated Tax Posting Engine',
+      'Strict Double-Entry Controls',
+      'Append-Only Immutable Trails',
+      'Branch-Level Access Permissions',
+    ],
+    audience: ['Multi-Branch Enterprises', 'Finance & Controllership', 'Corporate Groups'],
     url: 'https://nextwave.ellipsonic.com/',
     images: [
       '/next-wave/Screenshot 2026-08-24 at 16.44.25.png',
@@ -198,12 +205,18 @@ const products: Product[] = [
     category: 'Tenant-aware ticketing & SLAs',
     color: 'elipdesk',
     domains: ['operations'],
-    eyebrow: 'For MSPs, software vendors & enterprise support teams',
-    title: 'Deliver on SLAs. Delight your clients.',
+    eyebrow: 'Tenant-Aware Ticketing & SLA Management',
+    title: 'Automate SLAs. Deliver Exceptional Client Support.',
     description:
-      'Elipdesk is a multi-tenant ticketing and SLA management platform that centralizes client requests, enforces business-hours SLA automation, and preserves immutable audit trails.',
-    features: ['Logical multi-tenant isolation', 'Business-hours SLA calculation', 'Full ticket lifecycle automation', 'Immutable audit logs & history', 'Role-based access & S3 storage'],
-    audience: ['MSPs and digital agencies', 'Enterprise software vendors', 'IT & customer operations teams'],
+      'Multi-client ticketing, automated business-hours SLA timers, and verifiable compliance records.',
+    features: [
+      'Logical Multi-Tenant Isolation',
+      'Business-Hours SLA Calculation',
+      'Full Ticket Lifecycle Automation',
+      'Immutable Activity & History Logs',
+      'Role-Based RBAC & S3 Storage',
+    ],
+    audience: ['MSPs & Digital Agencies', 'Enterprise SaaS Vendors', 'IT & Operations Teams'],
     url: 'http://ticketing.ellipsonic.com/',
     images: [
       '/ellip-desk/WhatsApp Image 2026-08-24 at 17.16.52.jpeg',
@@ -234,12 +247,18 @@ const products: Product[] = [
     category: 'Legal document automation & workflows',
     color: 'lexdraft',
     domains: ['legal'],
-    eyebrow: 'For law firms, corporate legal & partner review teams',
-    title: 'Governed drafting. Partner-approved.',
+    eyebrow: 'Legal Document Automation & Workflow Review',
+    title: 'Accelerate Drafting with Partner-Approved Governance.',
     description:
-      'LexDraft bridges the gap between static templates and rigorous partner review cycles, turning firm-approved clauses into client-ready, auditable documents faster.',
-    features: ['Firm-approved clause repository', 'Multi-tier partner review & sign-off', 'Task Kanban & drafting stages', 'Immutable redline version history', 'Simulated AI & audit activity logs'],
-    audience: ['Mid-to-large law firms', 'Corporate legal departments', 'M&A and transactional legal teams'],
+      'Firm-approved clause repositories, multi-tier partner sign-offs, and auditable contract versions.',
+    features: [
+      'Approved Clause Repository',
+      'Multi-Tier Partner Sign-Offs',
+      'Drafting Kanban & Stage Gates',
+      'Immutable Redline Versioning',
+      'Simulated AI & Audit Activity Logs',
+    ],
+    audience: ['Mid-to-Large Law Firms', 'Corporate Legal Teams', 'M&A & Transaction Counsel'],
     images: [
       '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.50.jpeg',
       '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.51.jpeg',
@@ -255,26 +274,31 @@ const products: Product[] = [
     category: 'F&B inventory & multi-branch ERP',
     color: 'blizzbooks',
     domains: ['hospitality'],
-    eyebrow: 'For restaurant groups, hotels, cloud kitchens & multi-branch operators',
-    title: 'Take total control of your F&B inventory & operations.',
+    eyebrow: 'Back-of-House Stock Control & Multi-Branch ERP',
+    title: 'Take Total Control of F&B Inventory & Operations.',
     description:
-      'Blizz Books is a modular, cloud-based operations platform that unifies inventory, three-mode GRN receiving, wastage controls, and multi-branch governance into one auditable back-of-house system.',
+      'Three-mode GRN receiving, live wastage controls, and central multi-branch operational governance.',
     features: [
-      'Three-mode GRN stock entry (bulk, unit, pack)',
-      'Strict Organisation → Branch isolation',
-      'Role-switching workflows for lean teams',
-      'Immutable audit & wastage tracking',
-      'Modular expansion: recipes, production & analytics',
+      'Three-Mode GRN Stock Entry',
+      'Strict Org → Branch Hierarchy',
+      'Multi-Role Context Switching',
+      'Immutable Wastage & Audit Logs',
+      'Modular Recipes & Production ERP',
     ],
     audience: [
-      'Restaurant groups & chains',
-      'Hotels & resort kitchens',
-      'Cloud kitchens & multi-unit operators',
-      'Store managers & F&B auditors',
+      'Restaurant Groups & Chains',
+      'Hotels & Resort Kitchens',
+      'Cloud Kitchen Networks',
+      'Store Managers & F&B Auditors',
     ],
+    url: 'https://blizbooks.com/',
     images: [
-      '/blizz-books/WhatsApp Image 2026-08-25 at 12.10.35.jpeg',
-      '/blizz-books/WhatsApp Image 2026-08-25 at 12.13.07.jpeg',
+      '/blizz-books/1.jpeg',
+      '/blizz-books/2.jpeg',
+      '/blizz-books/3.jpeg',
+      '/blizz-books/4.jpeg',
+      '/blizz-books/5.jpeg',
+      '/blizz-books/6.jpeg',
     ],
   },
 ]
@@ -732,7 +756,10 @@ export default function Page() {
           {visibleProducts.map((product) => (
             <article className={`product product-${product.color}`} key={product.id}>
               <div className="product-top">
-                <div className="product-index">{product.number} <span>/ 05</span></div>
+                <div className="product-brand-tag">
+                  <span className="product-badge-num">{product.number}</span>
+                  <h2 className="product-highlight-name">{product.name}</h2>
+                </div>
                 <div className="product-category">{product.category}</div>
               </div>
               <div className="product-grid">
@@ -740,31 +767,39 @@ export default function Page() {
                   <p className="product-eyebrow">{product.eyebrow}</p>
                   <h3>{product.title}</h3>
                   <p className="product-description">{product.description}</p>
+
                   <div className="feature-list">
                     {product.features.map((feature) => (
-                      <span key={feature}><i>✓</i>{feature}</span>
+                      <span key={feature} className="feature-pill">
+                        <i className="feature-check">✓</i>
+                        <strong>{feature}</strong>
+                      </span>
                     ))}
                   </div>
-                  <div className="audience">
-                    <small>BEST FOR</small>
-                    <div>
-                      {product.audience.map((a) => (
-                        <span key={a}>{a}</span>
-                      ))}
+
+                  <div className="product-meta-row">
+                    <div className="audience">
+                      <small>BEST FOR</small>
+                      <div>
+                        {product.audience.map((a) => (
+                          <span key={a}>{a}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="product-actions">
-                    <a
-                      className="button button-dark"
-                      href={product.url ?? `#${product.id}-link`}
-                      target={product.url ? '_blank' : undefined}
-                      rel={product.url ? 'noopener noreferrer' : undefined}
-                    >
-                      View product <ArrowIcon />
-                    </a>
-                    <button className="button button-light" onClick={() => setDemoProduct(product.id)}>
-                      Book a demo <ArrowIcon />
-                    </button>
+
+                    <div className="product-actions">
+                      <a
+                        className="button button-dark"
+                        href={product.url ?? `#${product.id}-link`}
+                        target={product.url ? '_blank' : undefined}
+                        rel={product.url ? 'noopener noreferrer' : undefined}
+                      >
+                        View product <ArrowIcon />
+                      </a>
+                      <button className="button button-light" onClick={() => setDemoProduct(product.id)}>
+                        Book a demo <ArrowIcon />
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="mockup-wrap">
