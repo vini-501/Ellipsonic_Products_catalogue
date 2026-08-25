@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Dock from '@/components/Dock'
+import Magnet from '@/components/Magnet'
 
 type Product = {
   id: string
@@ -259,6 +260,7 @@ const products: Product[] = [
       'Simulated AI & Audit Activity Logs',
     ],
     audience: ['Mid-to-Large Law Firms', 'Corporate Legal Teams', 'M&A & Transaction Counsel'],
+    url: 'https://lexdraft-frontend.onrender.com',
     images: [
       '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.50.jpeg',
       '/lex-draft/WhatsApp Image 2026-08-24 at 17.28.51.jpeg',
@@ -721,16 +723,14 @@ export default function Page() {
   return (
     <main>
       <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
-      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Five products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
+      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><Magnet padding={60} magnetStrength={2.5}><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a></Magnet><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Five products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
       <section className="suite" id="suite">
         <div className="section-heading">
           <div>
             <p className="kicker"><span /> THE PRODUCT SUITE</p>
             <h2>{selectedDomainObj?.label}.<br /><em>{visibleProducts.length === 1 ? '1 tailored product.' : `${visibleProducts.length} tailored products.`}</em></h2>
           </div>
-          <p>
-            Viewing specialized software solutions engineered for {selectedDomainObj?.label.toLowerCase()}.
-          </p>
+
         </div>
 
         <div className="domain-filter" aria-label="Filter products by domain">
