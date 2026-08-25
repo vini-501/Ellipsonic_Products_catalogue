@@ -728,7 +728,7 @@ export default function Page() {
         <div className="section-heading">
           <div>
             <p className="kicker"><span /> THE PRODUCT SUITE</p>
-            <h2>{selectedDomainObj?.label}.<br /><em>{visibleProducts.length === 1 ? '1 tailored product.' : `${visibleProducts.length} tailored products.`}</em></h2>
+            <h2>{selectedDomainObj?.label}.<br /><em>{visibleProducts.length === 1 ? '' : `${visibleProducts.length} tailored products.`}</em></h2>
           </div>
 
         </div>
