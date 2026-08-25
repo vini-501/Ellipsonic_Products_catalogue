@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Dock from '@/components/Dock'
 
 type Product = {
   id: string
@@ -711,21 +712,19 @@ export default function Page() {
 
         <div className="domain-filter" aria-label="Filter products by domain">
           <span className="filter-label"><FilterIcon /> DOMAIN FOCUS</span>
-          <div className="filter-options">
-            {domainOptions.map((domain) => (
-              <button
-                key={domain.id}
-                className={`filter-chip ${activeDomain === domain.id ? 'is-active' : ''}`}
-                aria-pressed={activeDomain === domain.id}
-                onClick={() => setActiveDomain(domain.id)}
-              >
-                <DomainIcon id={domain.id} />
-                <span>{domain.label}</span>
-              </button>
-            ))}
-          </div>
+          <Dock
+            items={domainOptions.map((domain) => ({
+              id: domain.id,
+              label: domain.label,
+              icon: <DomainIcon id={domain.id} />,
+              active: activeDomain === domain.id,
+              onClick: () => setActiveDomain(domain.id),
+            }))}
+            distance={160}
+            maxScale={1.08}
+          />
           <span className="filter-count">
-            Showing <strong>{visibleProducts.length}</strong> product{visibleProducts.length === 1 ? '' : 's'} in {selectedDomainObj?.label}
+            Showing <strong>{visibleProducts.length}</strong> product in {selectedDomainObj?.label}
           </span>
         </div>
 
