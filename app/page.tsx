@@ -720,9 +720,8 @@ export default function Page() {
 
   return (
     <main>
-      <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#why">Why Ellipsonic</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
+      <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
       <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Five products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
-      <section className="intro" id="why"><div className="section-label">01 / THE ELLIPSONIC APPROACH</div><div className="intro-content"><h2>Built around the<br /><span>human outcome.</span></h2><div><p>Our products are not designed to add another layer of complexity. They are designed to make important work more understandable, more accountable, and easier to move forward.</p><a className="text-link" href="#suite">See what we make <ArrowIcon /></a></div></div></section>
       <section className="suite" id="suite">
         <div className="section-heading">
           <div>
