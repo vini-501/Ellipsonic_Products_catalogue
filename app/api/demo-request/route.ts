@@ -9,8 +9,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'A valid email is required.' }, { status: 400 })
     }
 
-    const smtpPass = process.env.SMTP_PASS
-    const isPlaceholder = !smtpPass || smtpPass === 'your-gmail-app-password-here' || smtpPass.includes('your-')
+    const productName = product || 'Ellipsonic (General)'
+    const now = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+
+    const rawPass = process.env.SMTP_PASS?.trim()
+    const isPlaceholder = !rawPass || rawPass === 'your-gmail-app-password-here' || rawPass.includes('your-')
 
     if (isPlaceholder) {
       console.warn(
@@ -19,18 +22,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true, note: 'Mock mode active (configure SMTP_PASS in .env.local for real emails)' })
     }
 
+    const cleanPass = rawPass.replace(/\s+/g, '')
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: Number(process.env.SMTP_PORT) || 587,
       secure: false,
       auth: {
         user: process.env.SMTP_USER,
-        pass: smtpPass,
+        pass: cleanPass,
       },
     })
-
-    const productName = product || 'Ellipsonic (General)'
-    const now = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
 
     await transporter.sendMail({
       from: `"Ellipsonic Catalogue" <${process.env.SMTP_USER}>`,
