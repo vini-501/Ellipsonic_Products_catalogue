@@ -24,13 +24,14 @@ const domainOptions = [
   // { id: 'crm', label: 'CRM & Networks' },
   { id: 'education', label: 'Education & learning' },
   { id: 'finance', label: 'Finance & GST' },
+  { id: 'marketplace', label: 'Events & Marketplace' },
   { id: 'operations', label: 'Support & SLAs' },
   { id: 'legal', label: 'Legal & Governance' },
   { id: 'hospitality', label: 'Hospitality & F&B' },
+  { id: 'health', label: 'Health & Healthcare' },
+  { id: 'security', label: 'Security & Verification' },
   // { id: 'workforce', label: 'Workforce & HR' },
   // { id: 'trading', label: 'Trading & fintech' },
-  // { id: 'security', label: 'Security & access' },
-  // { id: 'health', label: 'Health & wellbeing' },
   // { id: 'commerce', label: 'Commerce & retail' },
 ] as const
 
@@ -93,55 +94,29 @@ const products: Product[] = [
       '/next-wave/Screenshot 2026-08-24 at 16.49.46.png',
     ],
   },
-  /*
-  {
-    id: 'optionalgo',
-    number: '02',
-    name: 'Algo Trade',
-    category: 'Algorithmic trading infrastructure',
-    color: 'teal',
-    domains: ['trading'],
-    eyebrow: 'For quant teams, brokerages and institutional partners',
-    title: 'From strategy idea to execution.',
-    description:
-      'Option-Algo centralizes option strategy workflows with secure APIs, live analytics, and the infrastructure teams need to backtest, paper trade, and go live.',
-    features: ['REST and WebSocket APIs', 'Strategy versioning', 'Real-time Greeks and PnL', 'JWT access controls', 'Brokerage integrations'],
-    audience: ['Quant trading teams', 'Institutional brokers', 'Fintech infrastructure groups'],
-    images: [
-      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.29.jpeg',
-      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.29 (1).jpeg',
-      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.30.jpeg',
-      '/algo-trade/WhatsApp Image 2026-08-24 at 16.46.30 (1).jpeg',
-    ],
-  },
-  {
-    id: 'securegate',
-    number: '03',
-    name: 'SecureGate',
-    category: 'Community access control',
-    color: 'blue',
-    domains: ['security'],
-    eyebrow: 'For property managers & gated communities',
-    title: 'A faster, more visible way through the gate.',
-    description:
-      'SecureGate replaces phone calls and paper passes with resident sign-in, time-bound visitor access, and a manager portal built for clear, auditable control.',
-    features: ['Mobile resident sign-in', 'Temporary visitor passes', 'Manager dashboard', 'Shared token-based auth', 'Containerized deployments'],
-    audience: ['Property management firms', 'Multi-site apartment operators', 'Condominium boards'],
-    url: 'http://screening.ellipsonic.com/',
-  },
   {
     id: 'ayushman',
-    number: '04',
+    number: '03',
     name: 'Ayushman',
-    category: 'Practice operations',
+    category: 'Practice operations & healthcare governance',
     color: 'violet',
     domains: ['health'],
-    eyebrow: 'For clinics, coaching networks & EAP providers',
-    title: 'The operating system for trusted advisory.',
+    eyebrow: 'For Clinics, Coaching Networks & Healthcare Providers',
+    title: 'The Operating System for Trusted Healthcare & Advisory.',
     description:
       'Ayushman brings verified practitioners, intelligent scheduling, secure consultations, and enterprise governance into one calm, accountable workspace.',
-    features: ['Verified onboarding', 'Intelligent scheduling', 'Tenant-aware governance', 'Immutable session logs', 'Workflow automation'],
-    audience: ['Mental health clinics', 'Executive coaching networks', 'Employee assistance programs'],
+    features: [
+      'Verified Practitioner Onboarding',
+      'Intelligent Appointment Scheduling',
+      'Tenant-Aware Clinical Governance',
+      'Immutable Encrypted Session Logs',
+      'Automated Workflow & Billing',
+    ],
+    audience: [
+      'Mental Health Clinics',
+      'Executive Coaching Networks',
+      'Employee Assistance Programs (EAPs)',
+    ],
     url: 'http://ayushmaan.ellipsonic.com/',
     images: [
       '/aayushmaan/01.png',
@@ -152,17 +127,27 @@ const products: Product[] = [
   },
   {
     id: 'chalk',
-    number: '05',
+    number: '04',
     name: 'Chalk AI',
-    category: 'Real-time AI tutoring',
+    category: 'Real-time AI tutoring & multimodal whiteboard',
     color: 'orange',
     domains: ['education'],
-    eyebrow: 'For EdTech, tutors, publishers & content teams',
+    eyebrow: 'For EdTech Platforms, Tutors & Content Publishers',
     title: 'Speak. See. Understand.',
     description:
       'Chalk AI turns a spoken question into a live explanation: a multimodal tutor that talks, draws, captions, and responds naturally in the same moment.',
-    features: ['Real-time voice', 'Live programmatic whiteboard', 'Synchronized visuals', 'Barge-in & tagging', 'Post-session summaries'],
-    audience: ['EdTech platforms', 'Tutoring marketplaces', 'Corporate learning teams'],
+    features: [
+      'Real-Time Multimodal Voice & Audio',
+      'Live Programmatic Whiteboard Canvas',
+      'Synchronized Visuals & Equation Graphing',
+      'Barge-In Interruption & Smart Tagging',
+      'Post-Session Synthesis & Summaries',
+    ],
+    audience: [
+      'EdTech Learning Platforms',
+      'Tutoring Marketplaces',
+      'Corporate Training Teams',
+    ],
     images: [
       '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.27.jpeg',
       '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.27 (1).jpeg',
@@ -170,38 +155,57 @@ const products: Product[] = [
     ],
   },
   {
-    id: 'corecart',
-    number: '06',
-    name: 'Core Cart',
-    category: 'Headless commerce engine',
-    color: 'commerce',
-    domains: ['commerce'],
-    eyebrow: 'For mid-market D2C brands and commerce agencies',
-    title: 'Launch commerce faster. Own the experience.',
+    id: 'artivo',
+    number: '05',
+    name: 'Artivo',
+    category: 'Escrow-backed verified artist marketplace',
+    color: 'artivo',
+    domains: ['marketplace', 'operations'],
+    eyebrow: 'Escrow-Backed Verified Artist Marketplace',
+    title: 'Book Verified Artists. Pay with Confidence. Never Worry About No-Shows.',
     description:
-      'Core Cart is a modular, TypeScript headless commerce core with a storefront, merchant dashboard, and admin tools ready to customize, deploy, and scale.',
-    features: ['Catalog and inventory', 'Orders and notifications', 'Storefront foundation', 'Merchant dashboards', 'Extensible AI tooling'],
-    audience: ['D2C commerce brands', 'Commerce agencies', 'Teams building new business models'],
+      "India's escrow-backed marketplace connecting event organisers with thousands of verified performers—transparent pricing, safe payments, instant settlement.",
+    features: [
+      'Multi-Tier Artist Verification (ID + Skill + Trusted)',
+      'Razorpay Escrow Advance Payment Protection',
+      'Server-Computed Itemized Quotes & Tax Splits',
+      'Zero Payment & No-Show Risk Guarantees',
+      'Two-Sided Blind Reviews & Fair Arbitration',
+    ],
+    audience: [
+      'Event Organisers & Festival Producers',
+      'Verified Musicians, Dancers & DJs',
+      'Corporate & Private Event Hosts',
+    ],
+    url: 'https://artivo.com',
   },
   {
-    id: 'smartteams',
-    number: '07',
-    name: 'Smart Teams',
-    category: 'Enterprise HR & Payroll',
-    color: 'smartteams',
-    domains: ['workforce', 'security'],
-    eyebrow: 'For enterprise operations, HR leaders & multi-shift workforces',
-    title: 'Zero-trust attendance. Compliant payroll.',
+    id: 'verifycerts',
+    number: '06',
+    name: 'Verify Certs',
+    category: 'Tamper-proof credential verification & integrity',
+    color: 'verifycerts',
+    domains: ['security', 'education', 'legal'],
+    eyebrow: 'Cryptographic Credential Verification & Audit Engine',
+    title: 'Instant, Cryptographically Verifiable Certificates & Credentials.',
     description:
-      'Smart Teams delivers a scholarly approach to workforce automation, replacing manual vulnerabilities with biometric liveness detection, automated leave routing, and India-first statutory payroll.',
-    features: ['Biometric liveness detection', 'WebAuthn passkeys & GPS geofencing', 'Automated leave routing', 'Statutory payroll engine', 'Real-time audit dashboards'],
-    audience: ['Multi-branch enterprises', 'Multi-shift manufacturing & retail', 'HR & payroll compliance teams'],
-    url: 'http://smarteam.ellipsonic.com/',
+      'Issue, manage, and instantly verify institutional credentials, tamper-proof certificates, and immutable audit trails.',
+    features: [
+      'Cryptographic Tamper-Proof Badges',
+      'Instant QR & Hash Verification (<80ms)',
+      'Multi-Issuer Governance & Authority Keys',
+      'Revocation & Expiry Registry',
+      'Developer REST APIs & Webhooks',
+    ],
+    audience: [
+      'Universities & Certification Bodies',
+      'Corporate Compliance & HR Teams',
+      'Licensing Boards & Regulatory Authorities',
+    ],
   },
-  */
   {
     id: 'elipdesk',
-    number: '03',
+    number: '07',
     name: 'Elipdesk',
     category: 'Tenant-aware ticketing & SLAs',
     color: 'elipdesk',
@@ -225,25 +229,9 @@ const products: Product[] = [
       '/ellip-desk/WhatsApp Image 2026-08-24 at 17.18.18.jpeg',
     ],
   },
-  /*
-  {
-    id: 'bondgrid',
-    number: '09',
-    name: 'BondGrid CRM',
-    category: 'Relationship-first CRM',
-    color: 'bondgrid',
-    domains: ['crm', 'finance'],
-    eyebrow: 'For professional services, wealth management & B2B enterprise sales',
-    title: 'Turn contacts into revenue networks.',
-    description:
-      'BondGrid is a relationship-first CRM that moves beyond static contact lists to map influence webs, log auditable communications, and deliver developer-ready relationship intelligence.',
-    features: ['Relationship intelligence & mapping', 'Auditable activity & immutable timeline', 'Account hierarchies & stakeholder webs', 'Deal pipeline tracking & automation', 'Role-based access & API integrations'],
-    audience: ['Professional services firms', 'Wealth management & advisory', 'B2B enterprise sales teams'],
-  },
-  */
   {
     id: 'lexdraft',
-    number: '04',
+    number: '08',
     name: 'LexDraft',
     category: 'Legal document automation & workflows',
     color: 'lexdraft',
@@ -271,7 +259,7 @@ const products: Product[] = [
   },
   {
     id: 'blizzbooks',
-    number: '05',
+    number: '09',
     name: 'Blizz Books',
     category: 'F&B inventory & multi-branch ERP',
     color: 'blizzbooks',
@@ -303,6 +291,80 @@ const products: Product[] = [
       '/blizz-books/6.jpeg',
     ],
   },
+  /*
+  {
+    id: 'optionalgo',
+    number: '10',
+    name: 'Algo Trade',
+    category: 'Algorithmic trading infrastructure',
+    color: 'teal',
+    domains: ['trading'],
+    eyebrow: 'For quant teams, brokerages and institutional partners',
+    title: 'From strategy idea to execution.',
+    description:
+      'Option-Algo centralizes option strategy workflows with secure APIs, live analytics, and the infrastructure teams need to backtest, paper trade, and go live.',
+    features: ['REST and WebSocket APIs', 'Strategy versioning', 'Real-time Greeks and PnL', 'JWT access controls', 'Brokerage integrations'],
+    audience: ['Quant trading teams', 'Institutional brokers', 'Fintech infrastructure groups'],
+  },
+  {
+    id: 'securegate',
+    number: '11',
+    name: 'SecureGate',
+    category: 'Community access control',
+    color: 'blue',
+    domains: ['security'],
+    eyebrow: 'For property managers & gated communities',
+    title: 'A faster, more visible way through the gate.',
+    description:
+      'SecureGate replaces phone calls and paper passes with resident sign-in, time-bound visitor access, and a manager portal built for clear, auditable control.',
+    features: ['Mobile resident sign-in', 'Temporary visitor passes', 'Manager dashboard', 'Shared token-based auth', 'Containerized deployments'],
+    audience: ['Property management firms', 'Multi-site apartment operators', 'Condominium boards'],
+    url: 'http://screening.ellipsonic.com/',
+  },
+  {
+    id: 'corecart',
+    number: '12',
+    name: 'Core Cart',
+    category: 'Headless commerce engine',
+    color: 'commerce',
+    domains: ['commerce'],
+    eyebrow: 'For mid-market D2C brands and commerce agencies',
+    title: 'Launch commerce faster. Own the experience.',
+    description:
+      'Core Cart is a modular, TypeScript headless commerce core with a storefront, merchant dashboard, and admin tools ready to customize, deploy, and scale.',
+    features: ['Catalog and inventory', 'Orders and notifications', 'Storefront foundation', 'Merchant dashboards', 'Extensible AI tooling'],
+    audience: ['D2C commerce brands', 'Commerce agencies', 'Teams building new business models'],
+  },
+  {
+    id: 'smartteams',
+    number: '13',
+    name: 'Smart Teams',
+    category: 'Enterprise HR & Payroll',
+    color: 'smartteams',
+    domains: ['workforce', 'security'],
+    eyebrow: 'For enterprise operations, HR leaders & multi-shift workforces',
+    title: 'Zero-trust attendance. Compliant payroll.',
+    description:
+      'Smart Teams delivers a scholarly approach to workforce automation, replacing manual vulnerabilities with biometric liveness detection, automated leave routing, and India-first statutory payroll.',
+    features: ['Biometric liveness detection', 'WebAuthn passkeys & GPS geofencing', 'Automated leave routing', 'Statutory payroll engine', 'Real-time audit dashboards'],
+    audience: ['Multi-branch enterprises', 'Multi-shift manufacturing & retail', 'HR & payroll compliance teams'],
+    url: 'http://smarteam.ellipsonic.com/',
+  },
+  {
+    id: 'bondgrid',
+    number: '14',
+    name: 'BondGrid CRM',
+    category: 'Relationship-first CRM',
+    color: 'bondgrid',
+    domains: ['crm', 'finance'],
+    eyebrow: 'For professional services, wealth management & B2B enterprise sales',
+    title: 'Turn contacts into revenue networks.',
+    description:
+      'BondGrid is a relationship-first CRM that moves beyond static contact lists to map influence webs, log auditable communications, and deliver developer-ready relationship intelligence.',
+    features: ['Relationship intelligence & mapping', 'Auditable activity & immutable timeline', 'Account hierarchies & stakeholder webs', 'Deal pipeline tracking & automation', 'Role-based access & API integrations'],
+    audience: ['Professional services firms', 'Wealth management & advisory', 'B2B enterprise sales teams'],
+  },
+  */
 ]
 
 function ArrowIcon() {
@@ -347,6 +409,13 @@ function DomainIcon({ id }: { id: string }) {
       </svg>
     )
   }
+  if (id === 'marketplace') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    )
+  }
   if (id === 'operations') {
     return (
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
@@ -371,6 +440,13 @@ function DomainIcon({ id }: { id: string }) {
         <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
         <path d="M7 2v20" />
         <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+      </svg>
+    )
+  }
+  if (id === 'health') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
       </svg>
     )
   }
@@ -423,6 +499,112 @@ function ScreenshotGallery({ images, name }: { images: string[]; name: string })
 function ProductMockup({ product }: { product: (typeof products)[number] }) {
   if (product.images && product.images.length > 0) {
     return <ScreenshotGallery images={product.images} name={product.name} />
+  }
+  if (product.id === 'artivo') {
+    return (
+      <div className="mockup artivo-mockup" aria-label="Artivo Artist Marketplace product preview">
+        <div className="mock-top">
+          <span className="mock-brand artivo-mark"><i>★</i> Artivo</span>
+          <span className="live-pill"><i /> RAZORPAY ESCROW ACTIVE</span>
+        </div>
+        <div className="artivo-content">
+          <div className="artivo-side">
+            <b>Marketplace OS</b>
+            <span>Verified Roster</span>
+            <span>Escrow Ledger</span>
+            <span>Server Quotes</span>
+            <span>Dispute Arb</span>
+          </div>
+          <div className="artivo-main">
+            <div className="artivo-heading">
+              <div>
+                <small>LIVE ESCROW BOOKING · DELHI NCR</small>
+                <strong>₹ 1,00,000 <span className="artivo-sub">The Local Train (Rock Band)</span></strong>
+              </div>
+              <span className="artivo-badge">● Escrow Protected</span>
+            </div>
+            <div className="artivo-stats">
+              <div>
+                <small>ADVANCE HELD</small>
+                <b className="stat-green">₹ 10,000</b>
+                <span>10% in Escrow</span>
+              </div>
+              <div>
+                <small>COMMISSION SAVED</small>
+                <b className="stat-green">₹ 20,000</b>
+                <span>vs 20% agency fee</span>
+              </div>
+              <div>
+                <small>ARTIST RATING</small>
+                <b>4.95 ★</b>
+                <span>Trusted Badge (Earned)</span>
+              </div>
+            </div>
+            <div className="artivo-stream">
+              <div>
+                <b>Live Escrow &amp; Booking Audit</b>
+                <span>Escrow Details →</span>
+              </div>
+              <p><i className="dot green" /> 10% Advance received &amp; secured in Razorpay escrow <small>Artist payment guaranteed post-event · Zero no-show risk</small></p>
+              <p><i className="dot coral-dot" /> Transparent quote computed <small>10% flat commission · All taxes &amp; TDS itemized automatically</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  if (product.id === 'verifycerts') {
+    return (
+      <div className="mockup verifycerts-mockup" aria-label="Verify Certs product preview">
+        <div className="mock-top">
+          <span className="mock-brand verifycerts-mark"><i>🛡</i> Verify Certs</span>
+          <span className="live-pill"><i /> HASH INTEGRITY ENGINE ACTIVE</span>
+        </div>
+        <div className="verifycerts-content">
+          <div className="verifycerts-side">
+            <b>Verification OS</b>
+            <span>Issue Registry</span>
+            <span>Instant Verify</span>
+            <span>Revocation Tree</span>
+            <span>Audit Trail</span>
+          </div>
+          <div className="verifycerts-main">
+            <div className="verifycerts-heading">
+              <div>
+                <small>CREDENTIAL INTEGRITY · CRYPTOGRAPHIC AUDIT</small>
+                <strong>100% <span className="verifycerts-sub">Tamper-Proof &amp; Validated</span></strong>
+              </div>
+              <span className="verifycerts-badge">● Cryptographically Verified</span>
+            </div>
+            <div className="verifycerts-stats">
+              <div>
+                <small>VERIFY SPEED</small>
+                <b className="stat-green">&lt; 80ms</b>
+                <span>Instant hash check</span>
+              </div>
+              <div>
+                <small>TAMPER RISK</small>
+                <b>0%</b>
+                <span>SHA-256 immutable</span>
+              </div>
+              <div>
+                <small>ACTIVE ISSUERS</small>
+                <b>140+</b>
+                <span>Accredited institutions</span>
+              </div>
+            </div>
+            <div className="verifycerts-stream">
+              <div>
+                <b>Live Cryptographic Validation Stream</b>
+                <span>Audit Explorer →</span>
+              </div>
+              <p><i className="dot green" /> Institutional Certificate #VC-9481 authenticated <small>Cryptographic signature valid · Issued by Delhi University</small></p>
+              <p><i className="dot blue-dot" /> Instant QR Scan check passed <small>Zero tampering detected · Append-only verification log</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
   if (product.id === 'lexdraft') {
     return (
@@ -723,12 +905,12 @@ export default function Page() {
   return (
     <main>
       <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
-      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><Magnet padding={60} magnetStrength={2.5}><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a></Magnet><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Five products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
+      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><Magnet padding={60} magnetStrength={2.5}><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a></Magnet><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Nine products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
       <section className="suite" id="suite">
         <div className="section-heading">
           <div>
             <p className="kicker"><span /> THE PRODUCT SUITE</p>
-            <h2>{selectedDomainObj?.label}.<br /><em>{visibleProducts.length === 1 ? '' : `${visibleProducts.length} tailored products.`}</em></h2>
+            <h2>{selectedDomainObj?.label}.<br /><em>{visibleProducts.length === 1 ? '1 tailored product.' : `${visibleProducts.length} tailored products.`}</em></h2>
           </div>
 
         </div>
@@ -747,7 +929,7 @@ export default function Page() {
             maxScale={1.08}
           />
           <span className="filter-count">
-            Showing <strong>{visibleProducts.length}</strong> product in {selectedDomainObj?.label}
+            Showing <strong>{visibleProducts.length}</strong> product{visibleProducts.length === 1 ? '' : 's'} in {selectedDomainObj?.label}
           </span>
         </div>
 
