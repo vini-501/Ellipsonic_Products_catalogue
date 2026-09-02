@@ -9,13 +9,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'A valid email is required.' }, { status: 400 })
     }
 
+    const smtpPass = process.env.SMTP_PASS
+    const isPlaceholder = !smtpPass || smtpPass === 'your-gmail-app-password-here' || smtpPass.includes('your-')
+
+    if (isPlaceholder) {
+      console.warn(
+        `[Demo Request - Dev Mode] Received demo request for "${productName}" from "${email}". (Email not sent: SMTP_PASS is not configured in .env.local)`
+      )
+      return NextResponse.json({ ok: true, note: 'Mock mode active (configure SMTP_PASS in .env.local for real emails)' })
+    }
+
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: Number(process.env.SMTP_PORT) || 587,
       secure: false,
       auth: {
         user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        pass: smtpPass,
       },
     })
 
@@ -24,7 +34,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"Ellipsonic Catalogue" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_TO,
+      to: process.env.SMTP_TO || process.env.SMTP_USER,
       replyTo: email,
       subject: `🟢 Demo Request — ${productName}`,
       html: `
@@ -61,7 +71,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true })
   } catch (err: unknown) {
     console.error('Demo request email failed:', err)
-    const message = err instanceof Error ? err.message : 'Failed to send email'
+    let message = 'Failed to send demo request. Please try again later.'
+    if (err instanceof Error) {
+      if (err.message.includes('535') || err.message.includes('BadCredentials') || err.message.includes('Username and Password not accepted')) {
+        message = 'SMTP authentication failed. Please configure a valid 16-character Google App Password in .env.local'
+      } else {
+        message = err.message
+      }
+    }
     return NextResponse.json({ error: message }, { status: 500 })
   }
 }
