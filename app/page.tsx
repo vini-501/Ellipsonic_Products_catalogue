@@ -21,8 +21,8 @@ type Product = {
 }
 
 const domainOptions = [
-  // { id: 'crm', label: 'CRM & Networks' },
-  { id: 'education', label: 'Education & learning' },
+  { id: 'education', label: 'Education & Learning' },
+  { id: 'edtech', label: 'Ed-Tech & Tutoring' },
   { id: 'finance', label: 'Finance & GST' },
   { id: 'marketplace', label: 'Events & Marketplace' },
   { id: 'operations', label: 'Support & SLAs' },
@@ -30,9 +30,6 @@ const domainOptions = [
   { id: 'hospitality', label: 'Hospitality & F&B' },
   { id: 'health', label: 'Health & Healthcare' },
   { id: 'security', label: 'Security & Verification' },
-  // { id: 'workforce', label: 'Workforce & HR' },
-  // { id: 'trading', label: 'Trading & fintech' },
-  // { id: 'commerce', label: 'Commerce & retail' },
 ] as const
 
 const products: Product[] = [
@@ -131,7 +128,7 @@ const products: Product[] = [
     name: 'Chalk AI',
     category: 'Real-time AI tutoring & multimodal whiteboard',
     color: 'orange',
-    domains: ['education'],
+    domains: ['edtech'],
     eyebrow: 'For EdTech Platforms, Tutors & Content Publishers',
     title: 'Speak. See. Understand.',
     description:
@@ -160,7 +157,7 @@ const products: Product[] = [
     name: 'Artivo',
     category: 'Escrow-backed verified artist marketplace',
     color: 'artivo',
-    domains: ['marketplace', 'operations'],
+    domains: ['marketplace'],
     eyebrow: 'Escrow-Backed Verified Artist Marketplace',
     title: 'Book Verified Artists. Pay with Confidence. Never Worry About No-Shows.',
     description:
@@ -185,7 +182,7 @@ const products: Product[] = [
     name: 'Verify Certs',
     category: 'Tamper-proof credential verification & integrity',
     color: 'verifycerts',
-    domains: ['security', 'education', 'legal'],
+    domains: ['security'],
     eyebrow: 'Cryptographic Credential Verification & Audit Engine',
     title: 'Instant, Cryptographically Verifiable Certificates & Credentials.',
     description:
@@ -396,6 +393,15 @@ function DomainIcon({ id }: { id: string }) {
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
         <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
         <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5" />
+      </svg>
+    )
+  }
+  if (id === 'edtech') {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="filter-chip-icon">
+        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+        <line x1="12" y1="19" x2="12" y2="22" />
       </svg>
     )
   }
