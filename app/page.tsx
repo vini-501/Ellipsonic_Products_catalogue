@@ -174,7 +174,14 @@ const products: Product[] = [
       'Verified Musicians, Dancers & DJs',
       'Corporate & Private Event Hosts',
     ],
-    url: 'https://artivo.com',
+    url: 'https://artist-work-place-web-rouge.vercel.app/',
+    images: [
+      '/artivo/WhatsApp Image 2026-09-02 at 19.58.35.jpeg',
+      '/artivo/WhatsApp Image 2026-09-02 at 19.58.35 (1).jpeg',
+      '/artivo/WhatsApp Image 2026-09-02 at 19.58.35 (2).jpeg',
+      '/artivo/WhatsApp Image 2026-09-02 at 19.58.36.jpeg',
+      '/artivo/WhatsApp Image 2026-09-02 at 19.58.36 (1).jpeg',
+    ],
   },
   {
     id: 'verifycerts',
@@ -198,6 +205,14 @@ const products: Product[] = [
       'Universities & Certification Bodies',
       'Corporate Compliance & HR Teams',
       'Licensing Boards & Regulatory Authorities',
+    ],
+    url: 'https://verifycerts.ellipsonic.com',
+    images: [
+      '/verify_certs/image.png',
+      '/verify_certs/image copy.png',
+      '/verify_certs/image copy 2.png',
+      '/verify_certs/image copy 3.png',
+      '/verify_certs/image copy 4.png',
     ],
   },
   {
