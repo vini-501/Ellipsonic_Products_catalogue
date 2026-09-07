@@ -37,7 +37,7 @@
 | **02** | **Algo Trade** | Algorithmic Trading Infrastructure | REST/WebSocket APIs, real-time Greeks & PnL, strategy versioning | Internal |
 | **03** | **SecureGate** | Community Access Control | Mobile resident sign-in, time-bound visitor passes, manager dashboard | [screening.ellipsonic.com](http://screening.ellipsonic.com/) |
 | **04** | **Ayushman** | Practice Operations | Verified onboarding, intelligent scheduling, HIPAA-grade audit trails | [ayushmaan.ellipsonic.com](http://ayushmaan.ellipsonic.com/) |
-| **05** | **Chalk AI** | Real-time AI Tutoring | Multimodal voice & whiteboard, synchronized visuals, live equation solver | Internal |
+| **05** | **Chalk AI** | Real-time AI Tutoring | Multimodal voice & whiteboard, synchronized visuals, live equation solver | [chalk-ai-tawny.vercel.app](https://chalk-ai-tawny.vercel.app/) |
 | **06** | **Core Cart** | Headless Commerce Engine | Modular TypeScript headless core, merchant dashboards, extensible AI tools | Internal |
 | **07** | **Smart Teams** | Enterprise HR & Payroll | Biometric liveness detection, WebAuthn passkeys, GPS geofence, statutory payroll | [smarteam.ellipsonic.com](http://smarteam.ellipsonic.com/) |
 | **08** | **Elipdesk** | Ticketing & SLA Management | Logical multi-tenant isolation, business-hours SLA engine, immutable audit logs | [ticketing.ellipsonic.com](http://ticketing.ellipsonic.com/) |

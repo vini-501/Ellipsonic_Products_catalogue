@@ -17,6 +17,7 @@ type Product = {
   features: string[]
   audience: string[]
   url?: string
+  logo?: string
   images?: string[]
 }
 
@@ -37,6 +38,7 @@ const products: Product[] = [
     id: 'prerana',
     number: '01',
     name: 'Prerana Smart Guru',
+    logo: '/prerana/Prerana-logo-black.png',
     category: 'Governed AI learning & academic operations',
     color: 'orange',
     domains: ['education'],
@@ -145,6 +147,7 @@ const products: Product[] = [
       'Tutoring Marketplaces',
       'Corporate Training Teams',
     ],
+    url: 'https://chalk-ai-tawny.vercel.app/',
     images: [
       '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.27.jpeg',
       '/chalk-ai/WhatsApp Image 2026-08-24 at 18.01.27 (1).jpeg',
@@ -273,6 +276,7 @@ const products: Product[] = [
     id: 'blizzbooks',
     number: '09',
     name: 'Blizz Books',
+    logo: '/blizz-books/logo-DxMv4Rgo (1).gif',
     category: 'F&B inventory & multi-branch ERP',
     color: 'blizzbooks',
     domains: ['hospitality'],
@@ -960,7 +964,14 @@ export default function Page() {
               <div className="product-top">
                 <div className="product-brand-tag">
                   <span className="product-badge-num">{product.number}</span>
-                  <h2 className="product-highlight-name">{product.name}</h2>
+                  {product.logo ? (
+                    <div className="product-brand-logo-wrap">
+                      <img src={product.logo} alt={product.name} className="product-brand-logo" />
+                      <h2 className="sr-only">{product.name}</h2>
+                    </div>
+                  ) : (
+                    <h2 className="product-highlight-name">{product.name}</h2>
+                  )}
                 </div>
                 <div className="product-category">{product.category}</div>
               </div>
