@@ -926,7 +926,7 @@ export default function Page() {
   return (
     <main>
       <header className="site-header"><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><nav><a href="#suite">Product suite</a><a href="#contact">Contact</a></nav><a className="header-cta" href="#suite">Explore suite <ArrowIcon /></a></header>
-      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2024</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><Magnet padding={60} magnetStrength={2.5}><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a></Magnet><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Nine products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
+      <section className="hero" id="top"><div className="hero-grid" /><div className="hero-copy"><p className="kicker"><span /> PRODUCT CATALOGUE · 2026</p><h1>Software that makes<br /><em>complex work</em> feel clear.</h1><p className="hero-lede">Ellipsonic builds focused digital products for the moments where trust, intelligence, and better systems make the biggest difference.</p><div className="hero-actions"><Magnet padding={60} magnetStrength={2.5}><a className="button button-dark" href="#suite">Explore the suite <ArrowIcon /></a></Magnet><a className="text-link" href="#contact">Talk to our team <ArrowIcon /></a></div></div><div className="hero-note"><span className="note-line" /><p>Nine products.<br />One thoughtful<br /><strong>approach to software.</strong></p></div></section>
       <section className="suite" id="suite">
         <div className="section-heading">
           <div>
@@ -1013,7 +1013,7 @@ export default function Page() {
         </div>
       </section>
       <section className="contact" id="contact"><div className="contact-orbit orbit-one" /><div className="contact-orbit orbit-two" /><p className="kicker"><span /> LET&apos;S MAKE IT CLEAR</p><h2>Have a complex problem?<br /><em>Let&apos;s talk about it.</em></h2><p>Tell us what you are building, and we&apos;ll show you where a more thoughtful system can help.</p><button className="button button-bright" onClick={() => setDemoProduct('Ellipsonic')}>Start a conversation <ArrowIcon /></button></section>
-      <footer><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><span>Product catalogue · 2024</span><span>Made for meaningful work.</span></footer>
+      <footer><a className="logo" href="#top" aria-label="Ellipsonic home"><img src="/Ellipsonic.png" alt="Ellipsonic" className="logo-img" /><span>Ellipsonic</span></a><span>Product catalogue · 2026</span><span>Made for meaningful work.</span></footer>
       {demoProduct && <div className="modal-backdrop" role="presentation" onClick={closeModal}><div className="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" aria-label="Close demo form" onClick={closeModal}>×</button>
         {formState === 'sent' ? (
